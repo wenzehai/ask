@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BEM</title>
+</head>
+<body>
+<p>
+    BEM其实是块（block）、元素（element）、修饰符（modifier）的缩写，利用不同的区块，功能以及样式来给元素命名。这三个部分使用__与--连接（这里用两个而不是一个是为了留下用于块儿的命名）。命名约定的模式如下：</p>
+<ul>
+    <li>block 代表了更高级别的抽象或组件</li>
+    <li>block__element 代表 block 的后代，用于形成一个完整的 block 的整体</li>
+    <li>block--modifier代表 block 的不同状态或不同版本</li>
+</ul>
+
+<p>范例：下面是常规写法</p>
+<form class="site-search  full">
+    <input type="text" class="field">
+    <input type="Submit" value ="Search" class="button">
+</form>
+<p>下面是BEM写法：</p>
+<form class="site-search  site-search--full">
+    <input type="text" class="site-search__field">
+    <input type="Submit" value ="Search" class="site-search__button">
+</form>
+
+
+
+</body>
+</html>

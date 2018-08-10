@@ -3,54 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        .box {
-            font-size: 16px;
-            font-size: calc(100% + 2 * (100vw - 375px) / 225);
-        }
-        @media screen and (min-width: 600px) {
-            .box {
-                font-size: calc(112.5% + 4 * (100vw - 600px) / 400);
-            }
-        }
-        @media screen and (min-width: 1000px) {
-            .box {
-                font-size: calc(137.5% + 5 * (100vw - 1000px) / 1000);
-            }
-        }
-
-        .box {
-            width: 100%;
-            max-width: 480px;
-            margin: auto;
-        }
-        .title {
-            text-align: center;
-            font-size: 1.2em;
-        }
-        .list {
-            overflow: hidden;
-        }
-        .image {
-            float: left;
-            width: 5em; height: 3.75em;
-            margin-right: 1em;
-        }
-        .content {
-            overflow: hidden;
-        }
-
-    </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="css/zui.css">
 </head>
 <body>
-<div class="box">
-    <h2 class="title">标题</h2>
-    <div class="list">
-        <img src="mm1.jpg" class="image">
-        <div class="content">
-            由于Android4.4才开始支持vw单位，所以，基于视区宽度的排版和布局迟迟没有火起来，但是，显然，快了~~
-        </div>
-    </div>
-</div>
+<a class="weui-btn weui-btn_primary">按钮</a>
+<a class="weui-btn weui-btn_warn">按钮</a>
+<a class="weui-btn  weui-btn_default weui-btn_disabled">按钮</a>
+
+
+
+
+
+
+
 </body>
 </html>
