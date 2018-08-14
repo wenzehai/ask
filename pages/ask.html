@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我要提问</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script src="../libs/flexible/flexible.min.js"></script>                                              <!--采用rem布局方式，尺寸根据html的font-size大小来自动响应调整，文字大小继承自body，采用em方式继承-->
+    <link rel="stylesheet" type="text/css" href="../libs/normalize/normalize.css">                                        <!--浏览器原生样式重置-->
+    <link rel="stylesheet" type="text/css" href="../libs/iconfont/iconfont.css">                        <!--字体图标，与PC端公用一个-->
+    <link rel="stylesheet" type="text/css" href="../libs/weui/weui.css">
+    <link rel="stylesheet" type="text/css" href="../css/mobile.css">                                                      <!--所有页面的css样式统一汇总在此页面，每个页面加前缀**Page-->
+    <style>
+
+    </style>
+</head>
+<body class="ask">
+<!--导航栏-->
+<div class="site-nav">
+    <div class="site-nav__item">
+        <a href="javascript:;" class="link"><span class="iconfont icon-left-triangle"></span>返回</a>
+    </div>
+    <div class="site-nav__item site-nav__item_title">
+        我要提问
+    </div>
+    <div class="site-nav__item"><a href="javascript:;" class="link">关闭</a></div>
+</div>
+<!--搜索框-->
+<div class="search-bar" id="search_bar">
+    <form class="search-bar__form">
+        <div class="search-bar__box">
+            <input type="search" class="search-bar__input" id="search_input" placeholder="请输入问题标题或单号" />
+            <i class="iconfont">&#xe61e;</i>
+        </div>
+    </form>
+</div>
+<!--顶部选项卡-->
+<div class="tab">
+    <div class="top-tab split-four">
+        <div class="top-tab__item top-tab__item_on">
+            <a href="javascript:;" class="link">已回复</a>
+        </div>
+        <div class="top-tab__item">
+            <a href="javascript:;" class="link">处理中<span class="top-tab__reddot"></span></a>
+        </div>
+        <div class="top-tab__item">
+            <a href="javascript:;" class="link">已关闭</a>
+        </div>
+        <div class="top-tab__item">
+            <a href="javascript:;" class="link">全部<span class="top-tab__reddot"></span></a>
+        </div>
+    </div>
+    <div class="top-tab__panel">
+        <div>内容</div>
+        <div style="display:none">Page 2</div>
+        <div style="display:none">Page 3</div>
+    </div>
+</div>
+
+<!--底部选项卡-->
+<div class="tab">
+    <div class="bottom-tab__panel">
+
+    </div>
+    <div class="bottom-tabbar">
+        <a href="javascript:;" class="bottom-tabbar__item bottom-bar__item_on">
+            <img src="./images/icon_tabbar.png" alt="" class="bottom-tabbar__icon">
+            <p class="bottom-tabbar__label">微信</p>
+        </a>
+        <a href="javascript:;" class="bottom-tabbar__item">
+            <img src="./images/icon_tabbar.png" alt="" class="bottom-tabbar__icon">
+            <p class="bottom-tabbar__label">通讯录</p>
+        </a>
+        <a href="javascript:;" class="bottom-tabbar__item">
+            <img src="./images/icon_tabbar.png" alt="" class="bottom-tabbar__icon">
+            <p class="bottom-tabbar__label">发现</p>
+        </a>
+        <a href="javascript:;" class="bottom-tabbar__item">
+            <img src="./images/icon_tabbar.png" alt="" class="bottom-tabbar__icon">
+            <p class="bottom-tabbar__label">我</p>
+        </a>
+    </div>
+</div>
+
+
+
+
+
+<script src="../js/mobile.js"></script>
+<script src="../libs/weui/weui.min.js"></script>
+<script>
+
+
+
+</script>
+</body>
+</html>

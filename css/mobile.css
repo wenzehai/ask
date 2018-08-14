@@ -1,7 +1,418 @@
 /*公共样式*/
-body {
-    font-size: 26px;
+/*  ====================================  全局样式  ====================================  */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
-h1 {
+
+body {
+    line-height: 1.6;
+    font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+    padding-top: 40px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a img {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: #494954;
+}
+@font-face {font-family: "iconfont";
+    src: url('../libs/iconfont/iconfont.eot'); /* IE9*/
+    src: url('../libs/iconfont/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../libs/iconfont/iconfont.woff') format('woff'), /* chrome, firefox */
+    url('../libs/iconfont/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../libs/iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+/*  ====================================  公共组件  ====================================  */
+/*顶部导航*/
+.site-nav {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 40px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #cccccc;
+    background: #ffffff;
+    display: flex;
+    padding: 0 15px;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.site-nav:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #CCCCCC;
+    color: #CCCCCC;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 2;
+}
+
+.site-nav__item {
+    min-width: 1px;
+}
+
+.site-nav__item a {
+    vertical-align: bottom;
+    font-size: inherit;
+    line-height: 40px;
+}
+
+.site-nav__item_title {
+    font-size: 18px;
+    line-height: 40px;
+}
+
+/*搜索框*/
+.search-bar {
+    position: relative;
+    padding: 8px 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    -webkit-text-size-adjust: 100%;
+    -webkit-box-align: start;                   /*todo:注意有么有有问题*/
+    -webkit-align-items: flex-start;            /*todo:注意有么有有问题*/
+    align-items: flex-start;                    /*todo:注意有么有有问题*/
+}
+.search-bar__form {
+    position:relative;
+    -webkit-box-flex:1;
+    -webkit-flex:auto;
+    flex:auto;
+    background-color:#EFEFF4;
+}
+.search-bar__form:after{
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    width:200%;
+    height:200%;
+    -webkit-transform:scale(0.5);
+    transform:scale(0.5);
+    -webkit-transform-origin:0 0;
+    transform-origin:0 0;
+    border-radius:10px;
+    border:1px solid #E6E6EA;
+    box-sizing:border-box;
+    background:#FFFFFF;
+}
+.search-bar__box{
+    position:relative;
+    padding-left:10px;
+    padding-right:10px;
+    height:100%;
+    width:100%;
+    box-sizing:border-box;
+    z-index:1;
+}
+.search-bar__input{
+    position: relative;
+    vertical-align: top;
+    padding:4px 0;
+    width:100%;
+    height:28px;
+    border:0;
+    font-size:12px;
+    line-height:36px;
+    box-sizing:content-box;
+    background:transparent;
+}
+.search-bar__box .iconfont {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    color: #b2b2b2;
+    width: 16px;
+    height: 16px;
+}
+.search-bar__input:focus {
+    outline: none;
+}
+.search-bar__input:focus + .iconfont {
+    display: none;
+}
+/*顶部选项卡navbar 分四*/
+.tab {
+    /*width: 100vw;*/
+    height: 100%;
+    position: relative;
+}
+.top-tab {
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:flex;
+    position:absolute;
+    z-index:500;
+    top:0;
+    width:100%;
+}
+.top-tab.split-four {
+    background-color:#f5f5f5;
+}
+.top-tab.split-three {
+    background-color:#ffffff;
+}
+.top-tab:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #ededef;
+    color: #ededef;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 2;
+}
+.top-tab__item{
+    position:relative;
+    display:block;
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    flex:1;
+    height: 44px;
+    line-height: 44px;
+    text-align:center;
+    font-size:15px;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+}
+.top-tab + .top-tab__panel {
+    padding-top: 44px;
+    padding-bottom: 0;
+}
+.top-tab__item .link {
+    box-sizing: border-box;
+    font-size: inherit;
+    display: inline-block;
+    height: 100%;
+    border-bottom: 2px solid #f5f5f5;
+    position: relative;
+}
+.top-tab__item.top-tab__item_on .link {
+    border-bottom: 2px solid #5fbeaa;
+}
+.top-tab__reddot {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    position: absolute;
+    top: 6px;
+    right: -8px;
+    background: #ff6363;
+    display: block;
+}
+
+/*底部导航bottom-tabbar*/
+.bottom-tabbar{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:flex;
+    position:absolute;
+    z-index:500;
+    bottom:0;
+    width:100%;
+    background-color:#ffffff;
+}
+.bottom-tabbar:before{
+    content:" ";
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    height:1px;
+    border-top:1px solid #9e9eae;
+    color:#9e9eae;
+    -webkit-transform-origin:0 0;
+    transform-origin:0 0;
+    -webkit-transform:scaleY(0.5);
+    transform:scaleY(0.5);
+}
+.bottom-tabbar__item{
+    display:block;
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    flex:1;
+    padding:5px 0 0;
+    font-size:0;
+    color:#999999;
+    text-align:center;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+}
+.bottom-tabbar__item.bottom-bar__item_on .bottom-tabbar__icon,
+.bottom-tabbar__item.bottom-bar__item_on .bottom-tabbar__icon > i,
+.bottom-tabbar__item.bottom-bar__item_on .bottom-tabbar__label{
+    color:#5fbeaa;
+}
+.bottom-tabbar__icon{
+    display:inline-block;
+    width:27px;
+    height:27px;
+}
+i.bottom-tabbar__icon,
+.bottom-tabbar__icon > i{
+    font-size:24px;
+    color:#999999;
+}
+.bottom-tabbar__icon img{
+    width:100%;
+    height:100%;
+}
+.bottom-tabbar__label{
+    text-align:center;
+    color:#999999;
+    font-size:10px;
+    line-height:1.8;
+}
+
+
+
+/*问题详情标题*/
+
+/*标准panel*/
+
+/*下拉panel*/
+
+/*两行表单*/
+
+/*一行表单cell*/
+
+/*弹窗*/
+
+/*  ====================================  移动端登录  ====================================  */
+.mobile-login {
 
 }
+
+/*  ====================================  个人中心-公用  ====================================  */
+.user-center {
+
+}
+
+/*  ====================================  我要提问-用户  ====================================  */
+.ask {
+
+}
+
+/*  ====================================  问题列表-用户  ====================================  */
+.question-list {
+
+}
+
+/*  ====================================  问题详情-用户  ====================================  */
+.user-question-detail {
+
+}
+
+/*  ====================================  在线留言-用户  ====================================  */
+.user-chat {
+
+}
+
+/*  ====================================  搜索-用户  ====================================  */
+.user-search {
+
+}
+
+/*  ====================================  待办列表-顾问  ====================================  */
+.consultant-todo {
+
+}
+
+/*  ====================================  已回复列表-顾问  ====================================  */
+.consultant-replied {
+
+}
+
+/*  ====================================  已转单列表-顾问  ====================================  */
+.consultant-transferred {
+
+}
+
+/*  ====================================  问题详情-顾问  ====================================  */
+.consultant-question-detail {
+
+}
+
+/*  ====================================  回复-顾问  ====================================  */
+.reply {
+
+}
+
+/*  ====================================  转单去向  ====================================  */
+.transfor-bill {
+
+}
+
+/*  ====================================  搜索-顾问  ====================================  */
+.consultant-search {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
