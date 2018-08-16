@@ -24,72 +24,149 @@
     </div>
     <div class="site-nav__item"><a href="javascript:;" class="link">关闭</a></div>
 </div>
-<!--搜索框-->
-<div class="search-bar" id="search_bar">
-    <form class="search-bar__form">
-        <div class="search-bar__box">
-            <input type="search" class="search-bar__input" id="search_input" placeholder="请输入问题标题或单号" />
-            <i class="iconfont">&#xe61e;</i>
-        </div>
+<!--步骤条-->
+<section class="step-bar">
+    <ul class="step-bar__wrap clearfix" id="progressbar">
+        <li  class="active step-bar__item">
+            <span class="number">1</span>
+            <p>选择对应系统</p>
+        </li>
+        <li class="step-bar__item">
+            <span class="number">2</span>
+            <p>填写问题内容</p>
+        </li>
+        <li class="step-bar__item">
+            <span class="number">3</span>
+            <p>确认个人信息</p>
+        </li>
+    </ul>
+</section>
+<!--表单内容填写-->
+<section class="step-content">
+    <form id="msform">
+        <fieldset style="display: block;">
+            <div class="cells">
+                <div class="cell_dbline">
+                    <div class="cell_dbline__hd">
+                        <label class="cell_dbline__label" for="001">系统</label><span class="wrong-tip">这里是错误提示预留位置</span>
+                    </div>
+                    <div class="cell_dbline__bd">
+                        <input type="text" id="001" class="cell_dbline__input" placeholder="请选择系统">
+                        <span class="iconfont icon-down-triangle"></span>
+                    </div>
+                </div>
+                <div class="cell_dbline">
+                    <div class="cell_dbline__hd">
+                        <label class="cell_dbline__label" for="002">类别</label><span class="wrong-tip">这里是错误提示预留位置</span>
+                    </div>
+                    <div class="cell_dbline__bd">
+                        <input type="text" id="002" class="cell_dbline__input" placeholder="请选择类别">
+                        <span class="iconfont icon-down-triangle"></span>
+                    </div>
+                </div>
+                <div class="cell_dbline">
+                    <button type="button" class="btn btn_primary next">下一步</button>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="cells">
+                <div class="cell_dbline">
+                    <div class="cell_dbline__hd">
+                        <label class="cell_dbline__label" for="">主题</label><span class="wrong-tip">这里是错误提示预留位置</span>
+                    </div>
+                    <div class="cell_dbline__bd">
+                        <input type="text" id="" class="cell_dbline__input" placeholder="请选择系统">
+                    </div>
+                </div>
+                <div class="cell_dbline">
+                    <div class="cell_dbline__hd">
+                        <label class="cell_dbline__label" for="">问题描述</label><span class="wrong-tip">这里是错误提示预留位置</span>
+                    </div>
+                    <div class="cell_dbline__bd">
+                        <textarea name="" id="aaa" cols="30" class="cell_dbline__textarea" rows="6" placeholder="请输入问题描述" ></textarea>
+                    </div>
+                </div>
+                <div class="cell_dbline clearfix">
+                    <div class="cell_dbline__hd">
+                        <label class="cell_dbline__label" for="">上传图片</label><span style="display: block;" class="uploader__info">0/3&nbsp;&nbsp;您最多上传三张图片</span>
+                    </div>
+                    <div class="cell_dbline__bd">
+                        <ul class="uploader__files" id="uploaderFiles">
+                            <li class="uploader__file" style="background-image:url(../images/eg.jpg)"></li>
+                            <li class="uploader__file" style="background-image:url(../images/eg.jpg)"></li>
+                        </ul>
+                        <div class="uploader__input-box" >
+                            <input id="uploaderInput" class="uploader__input" type="file" accept="image/*" multiple />
+                        </div>
+                    </div>
+                </div>
+                <div class="cell_dbline">
+                    <div class="btn-area_inline">
+                        <button type="button" class="btn btn_default previous">上一步</button>
+                        <button type="button" class="btn btn_primary next">下一步</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="cells">
+                <div class="cell_dbline">
+                    <div class="cell_dbline__hd">
+                        <label class="cell_dbline__label" for="">系统</label><span class="wrong-tip">这里是错误提示预留位置</span>
+                    </div>
+                    <div class="cell_dbline__bd">
+                        <input type="text" id="" class="cell_dbline__input" placeholder="请选择系统">
+                        <span class="iconfont icon-down-triangle"></span>
+                    </div>
+                </div>
+                <div class="cell_dbline">
+                    <div class="btn-area_inline">
+                        <button type="button" class="btn btn_default previous">上一步</button>
+                        <button type="submit" class="btn btn_primary" >提交</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
     </form>
-</div>
-<!--顶部选项卡-->
-<div class="tab">
-    <div class="top-tab split-four">
-        <div class="top-tab__item top-tab__item_on">
-            <a href="javascript:;" class="link">已回复</a>
-        </div>
-        <div class="top-tab__item">
-            <a href="javascript:;" class="link">处理中<span class="top-tab__reddot"></span></a>
-        </div>
-        <div class="top-tab__item">
-            <a href="javascript:;" class="link">已关闭</a>
-        </div>
-        <div class="top-tab__item">
-            <a href="javascript:;" class="link">全部<span class="top-tab__reddot"></span></a>
-        </div>
-    </div>
-    <div class="top-tab__panel">
-        <div>内容</div>
-        <div style="display:none">Page 2</div>
-        <div style="display:none">Page 3</div>
-    </div>
-</div>
-
+</section>
 <!--底部选项卡-->
-<div class="tab">
-    <div class="bottom-tab__panel">
-
-    </div>
-    <div class="bottom-tabbar">
-        <a href="javascript:;" class="bottom-tabbar__item bottom-bar__item_on">
-            <img src="./images/icon_tabbar.png" alt="" class="bottom-tabbar__icon">
-            <p class="bottom-tabbar__label">微信</p>
-        </a>
-        <a href="javascript:;" class="bottom-tabbar__item">
-            <img src="./images/icon_tabbar.png" alt="" class="bottom-tabbar__icon">
-            <p class="bottom-tabbar__label">通讯录</p>
-        </a>
-        <a href="javascript:;" class="bottom-tabbar__item">
-            <img src="./images/icon_tabbar.png" alt="" class="bottom-tabbar__icon">
-            <p class="bottom-tabbar__label">发现</p>
-        </a>
-        <a href="javascript:;" class="bottom-tabbar__item">
-            <img src="./images/icon_tabbar.png" alt="" class="bottom-tabbar__icon">
-            <p class="bottom-tabbar__label">我</p>
-        </a>
-    </div>
+<div class="bottom-tabbar">
+    <a href="javascript:;" class="bottom-tabbar__item ">
+        <span class="iconfont icon-ask-plain bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">我要提问</p>
+    </a>
+    <a href="javascript:;" class="bottom-tabbar__item bottom-bar__item_on">
+        <span class="iconfont icon-questionlist bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">问题列表</p>
+    </a>
+    <a href="javascript:;" class="bottom-tabbar__item">
+        <span class="iconfont icon-usercenter-plain bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">个人中心</p>
+    </a>
 </div>
-
-
 
 
 
 <script src="../js/mobile.js"></script>
 <script src="../libs/weui/weui.min.js"></script>
 <script>
-
-
+    var next = document.querySelectorAll(".next");
+    var previous = document.querySelectorAll(".previous");
+    var fieldset = document.querySelectorAll("fieldset");
+    for(var i=0; i < next.length; i++){
+        next[i].index = i;
+        previous[i].index = i+1;
+        fieldset[i].index=i;
+        next[i].onclick = function () {
+            fieldset[this.index].style.display = "none";
+            fieldset[this.index+ 1].style.display = "block";
+        }
+        previous[i].onclick = function () {
+            fieldset[this.index].style.display = "none";
+            fieldset[this.index- 1].style.display = "block";
+        }
+    }
 
 </script>
 </body>

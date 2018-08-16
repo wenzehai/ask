@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我要提问</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script src="../libs/flexible/flexible.min.js"></script>                                              <!--采用rem布局方式，尺寸根据html的font-size大小来自动响应调整，文字大小继承自body，采用em方式继承-->
+    <link rel="stylesheet" type="text/css" href="../libs/normalize/normalize.css">                                        <!--浏览器原生样式重置-->
+    <link rel="stylesheet" type="text/css" href="../libs/iconfont/iconfont.css">                        <!--字体图标，与PC端公用一个-->
+    <link rel="stylesheet" type="text/css" href="../libs/weui/weui.css">
+    <link rel="stylesheet" type="text/css" href="../css/mobile.css">                                                      <!--所有页面的css样式统一汇总在此页面，每个页面加前缀**Page-->
+    <style>
+
+    </style>
+</head>
+<body class="ask">
+<!--导航栏-->
+<div class="site-nav">
+    <div class="site-nav__item">
+        <a href="javascript:;" class="link"><span class="iconfont icon-left-triangle"></span>返回</a>
+    </div>
+    <div class="site-nav__item site-nav__item_title">
+        我要提问
+    </div>
+    <div class="site-nav__item"><a href="javascript:;" class="link">关闭</a></div>
+</div>
+<!--搜索框-->
+<div class="search-bar" id="search_bar">
+    <form class="search-bar__form">
+        <div class="search-bar__box">
+            <input type="search" class="search-bar__input" id="search_input" placeholder="请输入问题标题或单号" />
+            <i class="iconfont">&#xe61e;</i>
+        </div>
+    </form>
+</div>
+<!--顶部选项卡-->
+<!--<div class="tab">
+    <div class="top-tab split-four">
+        <div class="top-tab__item top-tab__item_on">
+            <a href="javascript:;" class="link">已回复</a>
+        </div>
+        <div class="top-tab__item">
+            <a href="javascript:;" class="link">处理中<span class="top-tab__reddot"></span></a>
+        </div>
+        <div class="top-tab__item">
+            <a href="javascript:;" class="link">已关闭</a>
+        </div>
+        <div class="top-tab__item">
+            <a href="javascript:;" class="link">全部<span class="top-tab__reddot"></span></a>
+        </div>
+    </div>
+    <div class="top-tab__panel">
+        <div>内容</div>
+        <div style="display:none">Page 2</div>
+        <div style="display:none">Page 3</div>
+    </div>
+</div>-->
+
+<!--底部选项卡-->
+
+<!--<div class="bottom-tabbar">
+    <a href="javascript:;" class="bottom-tabbar__item bottom-bar__item_on">
+        <img src="./images/icon_tabbar.png" alt="" class="bottom-tabbar__icon">
+        <p class="bottom-tabbar__label">我要提问</p>
+    </a>
+    <a href="javascript:;" class="bottom-tabbar__item">
+        <img src="./images/icon_tabbar.png" alt="" class="bottom-tabbar__icon">
+        <p class="bottom-tabbar__label">问题列表</p>
+    </a>
+    <a href="javascript:;" class="bottom-tabbar__item">
+        <img src="./images/icon_tabbar.png" alt="" class="bottom-tabbar__icon">
+        <p class="bottom-tabbar__label">个人中心</p>
+    </a>
+</div>-->
+
+<!--详情标题-->
+<div class="article-hd">
+    <h1 class="article-hd__title">在编辑新闻的时候，单击图片上传按钮，不显示添加按钮，图片无法上传 ？</h1>
+</div>
+
+<!--标准panel-->
+<div class="panel">
+    <div class="panel__hd">
+        <h2 class="panel__title">模块标题</h2>
+    </div>
+    <div class="panel__bd">
+        模块内容
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        内容
+    </div>
+</div>
+
+
+<!--下拉panel-->
+<div class="panel panel_dropdown">
+    <div class="panel__hd">
+        <div class="panel__hd_left">
+            <h2 class="panel__title">模块标题</h2>
+        </div>
+        <div class="panle__hd_right">
+            <span class="iconfont icon-down-triangle"></span>
+        </div>
+    </div>
+    <div class="panel__bd">
+        模块内容
+    </div>
+</div>
+
+
+<!--两行表单-->
+<form action="">
+    <div class="cells">
+        <div class="cell_dbline">
+            <label class="cell_dbline__hd" for="001">系统</label>
+            <div class="cell_dbline__bd">
+                <input type="text" id="001" class="cell_dbline__input" placeholder="请选择系统">
+                <span class="iconfont icon-down-triangle"></span>
+            </div>
+        </div>
+        <div class="cell_dbline">
+            <label class="cell_dbline__hd" for="002">系统</label>
+            <div class="cell_dbline__bd">
+                <input type="text" id="002" class="cell_dbline__input" placeholder="请选择系统">
+                <span class="iconfont icon-down-triangle"></span>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<!--单行表单-->
+<form action="">
+    <div class="cells">
+        <div class="cell-line cell-line_select">
+            <div class="cell-line__hd">
+                <label for="system" class="cell-line-label">开始时间</label>
+            </div>
+            <div class="cell-line__bd">
+                <select class="cell-line-select" name="select2" id="system">
+                    <option value="1">BIP系统</option>
+                    <option value="2">SSC财务系统</option>
+                    <option value="3">商旅平台</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="cells">
+        <div class="cell-line cell-line_select">
+            <div class="cell-line__hd">
+                <label for="leibie" class="cell-line-label">开始时间</label>
+            </div>
+            <div class="cell-line__bd">
+                <select class="cell-line-select" name="select2" id="leibie" disabled>
+                    <option value="1">BIP系统</option>
+                    <option value="2">SSC财务系统</option>
+                    <option value="3">商旅平台</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="cells">
+        <div class="cell-line cell-line_readonly">
+            <div class="cell-line__hd">
+                <label for="leibie" class="cell-line-label">开始时间</label>
+            </div>
+            <div class="cell-line__bd">
+                BIP系统BIP系统BIP系统BIP系统BIP系统BIP系统BIP系统BIP系统BIP系统BIP系统BIP系统BIP系统
+            </div>
+        </div>
+    </div>
+    <div class="cells">
+        <div class="cell-line cell-line_text-input">
+            <div class="cell-line__hd">
+                <label for="leibie" class="cell-line-label">开始时间</label>
+            </div>
+            <div class="cell-line__bd">
+                <input type="text" class="cell-line__text-input" placeholder="请输入内容" value="" >
+            </div>
+        </div>
+    </div>
+</form>
+
+<!--底部选项卡-->
+<div class="bottom-tabbar">
+    <a href="javascript:;" class="bottom-tabbar__item bottom-bar__item_on ">
+        <span class="iconfont icon-todo bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">待办</p>
+    </a>
+    <a href="javascript:;" class="bottom-tabbar__item">
+        <span class="iconfont icon-replied-plain bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">已回复</p>
+    </a>
+    <a href="javascript:;" class="bottom-tabbar__item">
+        <span class="iconfont icon-transformed-plain bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">已转单</p>
+    </a>
+    <a href="javascript:;" class="bottom-tabbar__item">
+        <span class="iconfont icon-usercenter-plain bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">个人中心</p>
+    </a>
+</div>
+
+
+<script src="../js/mobile.js"></script>
+<script src="../libs/weui/weui.min.js"></script>
+<script>
+
+
+
+</script>
+</body>
+</html>
