@@ -14,16 +14,6 @@
     </style>
 </head>
 <body class="ask">
-<!--导航栏-->
-<div class="site-nav">
-    <div class="site-nav__item">
-        <a href="javascript:;" class="link"><span class="iconfont icon-left-triangle"></span>返回</a>
-    </div>
-    <div class="site-nav__item site-nav__item_title">
-        我要提问
-    </div>
-    <div class="site-nav__item"><a href="javascript:;" class="link">关闭</a></div>
-</div>
 <!--步骤条-->
 <section class="step-bar">
     <ul class="step-bar__wrap clearfix" id="progressbar">
@@ -132,15 +122,15 @@
 </section>
 <!--底部选项卡-->
 <div class="bottom-tabbar">
-    <a href="javascript:;" class="bottom-tabbar__item ">
+    <a href="ask.html" class="bottom-tabbar__item bottom-bar__item_on">
         <span class="iconfont icon-ask-plain bottom-tabbar__iconfont"></span>
         <p class="bottom-tabbar__label">我要提问</p>
     </a>
-    <a href="javascript:;" class="bottom-tabbar__item bottom-bar__item_on">
+    <a href="questionList.html" class="bottom-tabbar__item ">
         <span class="iconfont icon-questionlist bottom-tabbar__iconfont"></span>
         <p class="bottom-tabbar__label">问题列表</p>
     </a>
-    <a href="javascript:;" class="bottom-tabbar__item">
+    <a href="userCenter.html" class="bottom-tabbar__item">
         <span class="iconfont icon-usercenter-plain bottom-tabbar__iconfont"></span>
         <p class="bottom-tabbar__label">个人中心</p>
     </a>
@@ -151,6 +141,7 @@
 <script src="../js/mobile.js"></script>
 <script src="../libs/weui/weui.min.js"></script>
 <script>
+    //下一步需要优化，缺少过渡和动画
     var next = document.querySelectorAll(".next");
     var previous = document.querySelectorAll(".previous");
     var fieldset = document.querySelectorAll("fieldset");

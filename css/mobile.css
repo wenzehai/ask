@@ -8,7 +8,6 @@ html {
 body {
     line-height: 1.6;
     font-family: -apple-system-font, "Helvetica Neue", sans-serif;
-    padding-top: 40px;
     height: 100vh;
     box-sizing: border-box;
     background: #f5f5f5;
@@ -64,20 +63,19 @@ h1,h2,h3 {
     line-height: 1em;
 }
 h1 {
-    font-size: 36px;
+    font-size: 18px;
     font-weight: 700;
 }
 h2 {
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 16px;
 }
 h3 {
-    font-size: 30px;
+    font-size: 15px;
     font-weight: 400;
 }
 p {
-    font-size: 26px;
-    line-height: 40px;
+    font-size: 13px;
+    line-height: 20px;
 }
 
 /*按钮*/
@@ -274,6 +272,11 @@ p {
     -webkit-box-align: start;                   /*todo:注意有么有有问题*/
     -webkit-align-items: flex-start;            /*todo:注意有么有有问题*/
     align-items: flex-start;                    /*todo:注意有么有有问题*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
 }
 .search-bar__form {
     position:relative;
@@ -341,10 +344,11 @@ p {
     display:-webkit-box;
     display:-webkit-flex;
     display:flex;
-    position:absolute;
     z-index:500;
-    top:0;
+    background-color: #f5f5f5;
     width:100%;
+    position: absolute;
+
 }
 .top-tab.split-four {
     background-color:#f5f5f5;
@@ -379,8 +383,25 @@ p {
     font-size:15px;
     -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
 }
+.top-tab__panel {
+    background: transparent;
+}
+.top-tab__panel:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #ededef;
+    color: #ededef;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 2;
+}
 .top-tab + .top-tab__panel {
-    padding-top: 44px;
     padding-bottom: 0;
 }
 .top-tab__item .link {
@@ -458,6 +479,158 @@ p {
     font-size:10px;
     line-height:1.8;
 }
+/*问题列表-未读*/
+.list-readable {
+    position: relative;
+    list-style: none;
+    padding: 0 0 0 35px;
+}
+.list__item {
+    position: relative;
+    background: #fff;
+}
+.list__item:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #ededef;
+    color: #ededef;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 2;
+}
+.list__item:last-of-type:after {
+    display: none;
+}
+.list__item_hd {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    justify-content: space-between;
+    padding-top: 8px;
+}
+.question-title {
+    font-weight: 400;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    line-height: 28px;
+    position: relative;
+}
+.question-mark {
+    background: #ffc868;
+    padding: 0 10px;
+    font-size: 12px;
+    height: 20px;
+    color: #ffffff;
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 11px;
+    white-space:nowrap;
+    margin-top: 5px;
+}
+.list__item_bd {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+}
+.question-des, .question-date {
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    line-height: 26px;
+    font-size: 13px;
+    color: #9e9eae;
+}
+.question-date {
+    padding-right: 10px;
+    min-width: 46px;
+    text-align: right;
+}
+.unread.list__item:before {
+    content: " ";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #5fbeaa;
+    border-radius: 50%;
+    top: 20px;
+    left: -20px;
+    position: absolute;
+}
+.unread .question-title {
+    font-weight: 700;
+}
+.unread .question-mark {
+    display: none;
+}
+/*问题列表-默认*/
+.list-normal {
+    padding: 0 0 0 15px;
+    position: relative;
+    background: #fff;
+    list-style: none;
+}
+.question_msg-tip {
+    position: absolute;
+    top: 13px;
+    right:15px;
+    line-height: 16px;
+    background: #ff6363;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*问题列表-顾问*/
+.list-consultant {
+    position: relative;
+    background: #fff;
+    list-style: none;
+    padding: 0 0 0 35px;
+}
+.list-consultant .list__item_hd {
+    align-items: center;
+}
+.tag {
+    line-height: 1em;
+    display: inline;
+    font-size: 11px;
+    padding: 2px;
+    margin-right: 4px;
+    background: #ffffff;
+}
+ .tag:last-of-type {
+    margin-right: 0;
+}
+.tag.space {
+    padding: 0 18px;
+}
+.tag.chao {
+    border: 1px solid #fec868;
+    color: #fec868;
+}
+.tag.gao {
+    border: 1px solid #ff6363;
+    color: #ff6363;
+}
+.tag.zhuan {
+    border: 1px solid #59c9f1;
+    color: #59c9f1;
+}
+
 
 
 /*问题详情标题*/
@@ -844,15 +1017,70 @@ section {
 
 }
 
-
-
-
-
-
-
 /*  ====================================  个人中心-公用  ====================================  */
 .user-center {
 
+}
+.profile-bar {
+    background: #ffffff;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:flex;
+    padding: 15px;
+    line-height: 1em;
+}
+.profile-bar:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #ededef;
+    color: #ededef;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 2;
+}
+.portrait-bar_hd {
+    padding: 0 20px 0 10px;
+}
+.portrait-bar_hd img {
+    width: 56px;
+    height: 56px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.profile-bar_bd {
+    padding-top: 6px;
+}
+.profile-bar_bd .username {
+    font-size: 18px;
+    color: #494954;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.profile-bar_bd .role {
+    display: inline-block;
+    line-height: 16px;
+    font-size: 10px;
+    padding: 0 10px;
+    color: #ffffff;
+    border-radius: 10px;
+    vertical-align: middle;
+    background: -webkit-linear-gradient(left, #658efe, #4fc985);
+}
+.profile-bar_bd .account {
+    color: #9e9eae;
+}
+.more-service {
+    padding: 0;
+}
+.more-service .panel__hd {
+    padding-left: 15px;
 }
 
 /*  ====================================  我要提问-用户  ====================================  */
@@ -949,15 +1177,28 @@ section {
 
 /*  ====================================  问题列表-用户  ====================================  */
 .question-list {
-
+    padding-top: 98px;
+}
+.question-list .tab-bar {
+    position: fixed;
+    top: 54px;
+    left: 0;
 }
 
 /*  ====================================  问题详情-用户  ====================================  */
 .user-question-detail {
 
 }
+.user-question-detail .top-tab {
+    position: relative;
+    background: #ffffff;
 
-/*  ====================================  在线留言-用户  ====================================  */
+}
+.user-question-detail .top-tab + .top-tab__panel {
+    padding-bottom: 44px;
+}
+
+    /*  ====================================  在线留言-用户  ====================================  */
 .user-chat {
 
 }

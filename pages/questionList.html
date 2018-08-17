@@ -2,33 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>问题列表</title><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <script src="../libs/flexible/flexible.min.js"></script>                                              <!--采用rem布局方式，尺寸根据html的font-size大小来自动响应调整，文字大小继承自body，采用em方式继承-->
-    <link rel="stylesheet" type="text/css" href="../libs/normalize/normalize.css">                                        <!--浏览器原生样式重置-->
-    <link rel="stylesheet" type="text/css" href="../libs/iconfont/iconfont.css">                        <!--字体图标，与PC端公用一个-->
+    <title>问题列表</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script src="../libs/flexible/flexible.min.js"></script>
+    <!--采用rem布局方式，尺寸根据html的font-size大小来自动响应调整，文字大小继承自body，采用em方式继承-->
+    <link rel="stylesheet" type="text/css" href="../libs/normalize/normalize.css">
+    <!--浏览器原生样式重置-->
+    <link rel="stylesheet" type="text/css" href="../libs/iconfont/iconfont.css">
+    <!--字体图标，与PC端公用一个-->
     <link rel="stylesheet" type="text/css" href="../libs/weui/weui.css">
-    <link rel="stylesheet" type="text/css" href="../css/mobile.css">                                                      <!--所有页面的css样式统一汇总在此页面，每个页面加前缀**Page-->
+    <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+    <!--所有页面的css样式统一汇总在此页面，每个页面加前缀**Page-->
     <style>
 
     </style>
 </head>
 <body class="question-list">
+<!--搜索框-->
+<div class="search-bar" id="search_bar">
+    <form class="search-bar__form">
+        <div class="search-bar__box">
+            <input type="search" class="search-bar__input" id="search_input" placeholder="请输入问题标题或单号"/>
+            <i class="iconfont">&#xe61e;</i>
+        </div>
+    </form>
+</div>
+<!--顶部选项卡-->
+<div class="tab">
+    <div class="top-tab">
+        <div class="top-tab__item top-tab__item_on">
+            <a href="javascript:;" class="link">已回复</a>
+        </div>
+        <div class="top-tab__item">
+            <a href="javascript:;" class="link">处理中<span class="top-tab__reddot"></span></a>
+        </div>
+        <div class="top-tab__item">
+            <a href="javascript:;" class="link">已关闭</a>
+        </div>
+    </div>
+    <div class="top-tab__panel">
+        <ul style="display: block;" class="list-readable">
+            <li class="list__item  unread">
+                <a href="javascript:;">
+                    <div class="list__item_hd ">
+                        <h2 class="question-title">BIP附件无法上传/点击上传按钮无反应hhh怎么办？</h2>
+                        <span class="question-mark">待评价</span>
+                    </div>
+                    <div class="list__item_bd ">
+                        <p class="question-des">现象一：点“上传”按钮没有任何反应，按钮呈灰色状态显示。原因：本机电脑flash控制版本过低。解决办法：升级flash控件即可。</p>
+                        <p class="question-date">今天</p>
+                    </div>
+                </a>
+            </li>
+            <li class="list__item unread">
+                <a href="javascript:;">
+                    <div class="list__item_hd ">
+                        <h2 class="question-title">苹果系统无法查看公文？</h2>
+                        <span class="question-mark">待评价</span>
+                    </div>
+                    <div class="list__item_bd ">
+                        <p class="question-des">
+                            因苹果系统无法安装任何插件，暂时BIP公文无法正常阅读公文附件，一般情况下，用户是安装双系统（再安装一个windows系统）进行使用BIP等系统，目前集团正在研究新的阅读方式，将不受客户端环境要求限制，预计年底前解决。</p>
+                        <p class="question-date">12-30</p>
+                    </div>
+                </a>
+            </li>
+            <li class="list__item ">
+                <a href="javascript:;">
+                    <div class="list__item_hd ">
+                        <h2 class="question-title">营销公文权限或者其他问题如何处理？</h2>
+                        <span class="question-mark">待评价</span>
+                    </div>
+                    <div class="list__item_bd ">
+                        <p class="question-des">营销系统和BIP是两个系统，营销系统问题，暂时需要进入【售楼系统】后-点击右上角【技术支持】下单提问。</p>
+                        <p class="question-date">8-10</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
 
 
 
 
+    </div>
+</div>
 
 
-
-
-
-
-
-
+<!--底部选项卡-->
+<div class="bottom-tabbar">
+    <a href="ask.html" class="bottom-tabbar__item ">
+        <span class="iconfont icon-ask-plain bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">我要提问</p>
+    </a>
+    <a href="questionList.html" class="bottom-tabbar__item bottom-bar__item_on">
+        <span class="iconfont icon-questionlist bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">问题列表</p>
+    </a>
+    <a href="userCenter.html" class="bottom-tabbar__item">
+        <span class="iconfont icon-usercenter-plain bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">个人中心</p>
+    </a>
+</div>
 
 <script src="../js/mobile.js"></script>
 <script>
-
 
 
 </script>
