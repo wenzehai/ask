@@ -2,21 +2,165 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>问题搜索</title><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <script src="../libs/flexible/flexible.min.js"></script>                                              <!--采用rem布局方式，尺寸根据html的font-size大小来自动响应调整，文字大小继承自body，采用em方式继承-->
-    <link rel="stylesheet" type="text/css" href="../libs/normalize/normalize.css">                                        <!--浏览器原生样式重置-->
-    <link rel="stylesheet" type="text/css" href="../libs/iconfont/iconfont.css">                        <!--字体图标，与PC端公用一个-->
+    <title>问题搜索</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script src="../libs/flexible/flexible.min.js"></script>
+    <!--采用rem布局方式，尺寸根据html的font-size大小来自动响应调整，文字大小继承自body，采用em方式继承-->
+    <link rel="stylesheet" type="text/css" href="../libs/normalize/normalize.css">
+    <!--浏览器原生样式重置-->
+    <link rel="stylesheet" type="text/css" href="../libs/iconfont/iconfont.css">
+    <!--字体图标，与PC端公用一个-->
     <link rel="stylesheet" type="text/css" href="../libs/weui/weui.css">
-    <link rel="stylesheet" type="text/css" href="../css/mobile.css">                                                      <!--所有页面的css样式统一汇总在此页面，每个页面加前缀**Page-->
+    <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+    <!--所有页面的css样式统一汇总在此页面，每个页面加前缀**Page-->
     <style>
 
     </style>
 </head>
 <body class="user-search">
 
+<!--搜索框-->
+<div class="search-bar" id="search_bar">
+    <form class="search-bar__form">
+        <div class="search-bar__box">
+            <input type="search" class="search-bar__input" id="search_input" placeholder="请输入问题标题或单号"/>
+            <i class="iconfont">&#xe61e;</i>
+            <!--<span>搜索</span>-->
+        </div>
+    </form>
+</div>
+<!--高级搜索-->
+<div class="panel panel_dropdown">
+    <div class="panel__hd">
+        <div class="panel__hd_left">
+            <h2 class="panel__title">共搜索到<span class="list-numbers">2000</span>条</h2>
+        </div>
+        <div class="panle__hd_right">
+            <a class="dropdown-link" href="javascript:;"><span class="iconfont icon-down-triangle"></span>筛选</a>
+        </div>
+    </div>
+    <div class="panel__bd">
+        <form class="">
+            <div class="cells">
+                <div class="cell-line cell-line_select">
+                    <div class="cell-line__hd">
+                        <label for="system" class="cell-line-label">系统</label>
+                    </div>
+                    <div class="cell-line__bd">
+                        <select class="cell-line-select" name="select2" id="system">
+                            <option value="1">BIP系统</option>
+                            <option value="2">SSC财务系统</option>
+                            <option value="3">商旅平台</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="cell-line cell-line_select">
+                    <div class="cell-line__hd">
+                        <label for="leibie" class="cell-line-label">类别</label>
+                    </div>
+                    <div class="cell-line__bd">
+                        <select class="cell-line-select" name="select2" id="leibie" disabled>
+                            <option value="1">BIP系统</option>
+                            <option value="2">SSC财务系统</option>
+                            <option value="3">商旅平台</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="cell-line cell-line_readonly">
+                    <div class="cell-line__hd">
+                        <label for="leibie" class="cell-line-label">开始时间</label>
+                    </div>
+                    <div class="cell-line__bd">
+                        <input type="text" class="cell-line__text-input" placeholder="请选择开始时间" value="">
+                    </div>
+                </div>
+
+                <div class="cell-line cell-line_text-input">
+                    <div class="cell-line__hd">
+                        <label for="leibie" class="cell-line-label">结束时间</label>
+                    </div>
+                    <div class="cell-line__bd">
+                        <input type="text" class="cell-line__text-input" placeholder="请选择结束时间" value="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="cells filter-btn-wrap">
+                <button class="btn btn_primary" type="submit">筛选</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--历史记录-->
+<div class="panel panel_dropdown">
+    <div class="panel__hd">
+        <div class="panel__hd_left">
+            <h2 class="panel__title">历史记录</h2>
+        </div>
+        <div class="panle__hd_right">
+            <a href="javascript:;" class="qingchu-btn">清除记录</a>
+            <!--<a class="dropdown-link" href="javascript:;"><span class="iconfont icon-down-triangle"></span></a>-->
+        </div>
+    </div>
+    <div class="panel__bd">
+        <ul class="search-history">
+            <li class="search-history__item">招标</li>
+            <li class="search-history__item">权限</li>
+            <li class="search-history__item">财务单据</li>
+        </ul>
+    </div>
+</div>
+
+
+<!--问题列表-->
+<ul style="display: block;" class="list-normal">
+    <li class="list__item">
+        <a href="javascript:;">
+            <div class="list__item_hd ">
+                <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                <span class="tag space"><!--占位符，请勿删除--></span>
+            </div>
+            <div class="list__item_bd ">
+                <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
+                <p class="question-date">今天</p>
+            </div>
+            <span class="question_msg-tip">1</span>
+        </a>
+    </li>
+    <li class="list__item">
+        <a href="javascript:;">
+            <div class="list__item_hd ">
+                <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                <span class="tag space"><!--占位符，请勿删除--></span>
+            </div>
+            <div class="list__item_bd ">
+                <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
+                <p class="question-date">今天</p>
+            </div>
+            <span class="question_msg-tip">1</span>
+        </a>
+    </li>
+    <li class="list__item">
+        <a href="javascript:;">
+            <div class="list__item_hd ">
+                <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                <span class="tag space"><!--占位符，请勿删除--></span>
+            </div>
+            <div class="list__item_bd ">
+                <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
+                <p class="question-date">今天</p>
+            </div>
+            <span class="question_msg-tip">1</span>
+        </a>
+    </li>
+</ul>
+
+<script src="../libs/weui/weui.js"></script>
 <script src="../js/mobile.js"></script>
 <script>
-
 
 
 </script>

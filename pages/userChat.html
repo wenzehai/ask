@@ -13,10 +13,120 @@
     </style>
 </head>
 <body class="user-chat">
+    <!--<div class="operate-bar">-->
+        <!--<span class="iconfont icon-show"></span>-->
+    <!--</div>-->
+    <div class="main">
+        <div class="chat-content__wrap">
+            <div class="chat-times">
+                <span class="chat-times__item">第1轮沟通</span><span class="chat-times__item">SSC财务系统</span><span class="chat-times__item">流程权限管理节点</span>
+            </div>
+            <div class="chat-txt me">
+                <span class="chat-time">2分钟前</span>
+                <div class="chat-txt__context">
+                    这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容
+                </div>
+                <div class="chat-txt__user">
+                    <img class="chat-user__portrait" src="../images/eg.jpg" alt="">
+                    <span class="chat-user__username">欧阳正华</span>
+                </div>
+            </div>
+            <div class="chat-txt other">
+                <div class="chat-txt__user">
+                    <img class="chat-user__portrait" src="../images/eg.jpg" alt="">
+                    <span class="chat-user__username">小荷</span>
+                </div>
+                <div class="chat-txt__context">
+                    <p>这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容</p>
+                </div>
+                <span class="chat-time">2分钟前</span>
+            </div>
+            <div class="chat-txt me">
+                <span class="chat-time">2分钟前</span>
+                <div class="chat-txt__context">
+                    这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容
+                </div>
+                <div class="chat-txt__user">
+                    <img class="chat-user__portrait" src="../images/eg.jpg" alt="">
+                    <span class="chat-user__username">欧阳正华</span>
+                </div>
+            </div>
+            <div class="chat-txt other">
+                <div class="chat-txt__user">
+                    <img class="chat-user__portrait" src="../images/eg.jpg" alt="">
+                    <span class="chat-user__username">小荷</span>
+                </div>
+                <div class="chat-txt__context">
+                    <p>这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容</p>
+                </div>
+                <span class="chat-time">2分钟前</span>
+            </div>
+            <div class="chat-txt me">
+                <span class="chat-time">2分钟前</span>
+                <div class="chat-txt__context">
+                    这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容
+                </div>
+                <div class="chat-txt__user">
+                    <img class="chat-user__portrait" src="../images/eg.jpg" alt="">
+                    <span class="chat-user__username">欧阳正华</span>
+                </div>
+            </div>
+            <div class="chat-txt other">
+                <div class="chat-txt__user">
+                    <img class="chat-user__portrait" src="../images/eg.jpg" alt="">
+                    <span class="chat-user__username">小荷</span>
+                </div>
+                <div class="chat-txt__context">
+                    <p>这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容</p>
+                </div>
+                <span class="chat-time">2分钟前</span>
+            </div>
+            <div class="chat-txt me">
+                <span class="chat-time">2分钟前</span>
+                <div class="chat-txt__context">
+                    这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容
+                </div>
+                <div class="chat-txt__user">
+                    <img class="chat-user__portrait" src="../images/eg.jpg" alt="">
+                    <span class="chat-user__username">欧阳正华</span>
+                </div>
+            </div>
+            <div class="chat-txt other">
+                <div class="chat-txt__user">
+                    <img class="chat-user__portrait" src="../images/eg.jpg" alt="">
+                    <span class="chat-user__username">小荷</span>
+                </div>
+                <div class="chat-txt__context">
+                    <p>这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容</p>
+                </div>
+                <span class="chat-time">2分钟前</span>
+            </div>
+        </div>
+        <!--<div class="chat-content__empty-info" >暂无留言记录</div>-->
+    </div>
+    <!--输入框-->
+    <div class="chat-input-wrap">
+        <div id="chatInput" class="chat-input" contenteditable="true"></div>
+        <button class="send btn_primary btn_mini">发送</button>
+    </div>
+
 
 <script src="../js/mobile.js"></script>
 <script>
-
+window.onload = function () {
+    var chatInput = document.getElementById("chatInput");
+    var userChat = document.getElementsByClassName("user-chat")[0];
+    chatInput.onfocus = function () {
+        console.log("add class");
+        userChat.classList.add("full-body");
+        console.log("add full-body");
+    }
+    chatInput.onblur = function () {
+        console.log("remove class");
+        userChat.classList.remove("full-body");
+        console.log("remove full-body");
+    }
+};
 
 
 </script>

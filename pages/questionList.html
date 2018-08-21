@@ -29,46 +29,70 @@
     </form>
 </div>
 <!--顶部选项卡-->
-<div class="tab">
-    <div class="top-tab">
-        <div class="top-tab__item top-tab__item_on">
+<div class="weui-tab" id="tab">
+    <div class="weui-navbar">
+        <div class="weui-navbar__item weui-bar__item_on">
             <a href="javascript:;" class="link">已回复</a>
         </div>
-        <div class="top-tab__item">
+        <div class="weui-navbar__item">
             <a href="javascript:;" class="link">处理中<span class="top-tab__reddot"></span></a>
         </div>
-        <div class="top-tab__item">
+        <div class="weui-navbar__item">
             <a href="javascript:;" class="link">已关闭</a>
         </div>
     </div>
-    <div class="top-tab__panel">
-        <ul style="display: block;" class="list-readable">
-            <li class="list__item  unread">
-                <a href="javascript:;">
-                    <div class="list__item_hd ">
-                        <h2 class="question-title">BIP附件无法上传/点击上传按钮无反应hhh怎么办？</h2>
-                        <span class="question-mark">待评价</span>
-                    </div>
-                    <div class="list__item_bd ">
-                        <p class="question-des">现象一：点“上传”按钮没有任何反应，按钮呈灰色状态显示。原因：本机电脑flash控制版本过低。解决办法：升级flash控件即可。</p>
-                        <p class="question-date">今天</p>
-                    </div>
-                </a>
-            </li>
-            <li class="list__item unread">
-                <a href="javascript:;">
-                    <div class="list__item_hd ">
-                        <h2 class="question-title">苹果系统无法查看公文？</h2>
-                        <span class="question-mark">待评价</span>
-                    </div>
-                    <div class="list__item_bd ">
-                        <p class="question-des">
-                            因苹果系统无法安装任何插件，暂时BIP公文无法正常阅读公文附件，一般情况下，用户是安装双系统（再安装一个windows系统）进行使用BIP等系统，目前集团正在研究新的阅读方式，将不受客户端环境要求限制，预计年底前解决。</p>
-                        <p class="question-date">12-30</p>
-                    </div>
-                </a>
-            </li>
-            <li class="list__item ">
+    <div class="weui-tab__panel">
+        <div class="weui-tab__content">
+            <ul class="list-readable">
+                <li class="list__item  unread">
+                    <a href="javascript:;">
+                        <div class="list__item_hd ">
+                            <h2 class="question-title">BIP附件无法上传/点击上传按钮无反应hhh怎么办？</h2>
+                            <span class="question-mark">待评价</span>
+                        </div>
+                        <div class="list__item_bd ">
+                            <p class="question-des">现象一：点“上传”按钮没有任何反应，按钮呈灰色状态显示。原因：本机电脑flash控制版本过低。解决办法：升级flash控件即可。</p>
+                            <p class="question-date">今天</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="list__item unread">
+                    <a href="javascript:;">
+                        <div class="list__item_hd ">
+                            <h2 class="question-title">苹果系统无法查看公文？</h2>
+                            <span class="question-mark">待评价</span>
+                        </div>
+                        <div class="list__item_bd ">
+                            <p class="question-des">
+                                因苹果系统无法安装任何插件，暂时BIP公文无法正常阅读公文附件，一般情况下，用户是安装双系统（再安装一个windows系统）进行使用BIP等系统，目前集团正在研究新的阅读方式，将不受客户端环境要求限制，预计年底前解决。</p>
+                            <p class="question-date">12-30</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="list__item ">
+                    <a href="javascript:;">
+                        <div class="list__item_hd ">
+                            <h2 class="question-title">营销公文权限或者其他问题如何处理？</h2>
+                            <span class="question-mark">待评价</span>
+                        </div>
+                        <div class="list__item_bd ">
+                            <p class="question-des">营销系统和BIP是两个系统，营销系统问题，暂时需要进入【售楼系统】后-点击右上角【技术支持】下单提问。</p>
+                            <p class="question-date">8-10</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="list__item ">
+                    <a href="javascript:;">
+                        <div class="list__item_hd ">
+                            <h2 class="question-title">营销公文权限或者其他问题如何处理？</h2>
+                            <span class="question-mark">待评价</span>
+                        </div>
+                        <div class="list__item_bd ">
+                            <p class="question-des">营销系统和BIP是两个系统，营销系统问题，暂时需要进入【售楼系统】后-点击右上角【技术支持】下单提问。</p>
+                            <p class="question-date">8-10</p>
+                        </div>
+                    </a>
+                </li><li class="list__item ">
                 <a href="javascript:;">
                     <div class="list__item_hd ">
                         <h2 class="question-title">营销公文权限或者其他问题如何处理？</h2>
@@ -80,7 +104,116 @@
                     </div>
                 </a>
             </li>
-        </ul>
+                <li class="list__item ">
+                    <a href="javascript:;">
+                        <div class="list__item_hd ">
+                            <h2 class="question-title">营销公文权限或者其他问题如何处理？</h2>
+                            <span class="question-mark">待评价</span>
+                        </div>
+                        <div class="list__item_bd ">
+                            <p class="question-des">营销系统和BIP是两个系统，营销系统问题，暂时需要进入【售楼系统】后-点击右上角【技术支持】下单提问。</p>
+                            <p class="question-date">8-10</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="list__item ">
+                    <a href="javascript:;">
+                        <div class="list__item_hd ">
+                            <h2 class="question-title">营销公文权限或者其他问题如何处理？</h2>
+                            <span class="question-mark">待评价</span>
+                        </div>
+                        <div class="list__item_bd ">
+                            <p class="question-des">营销系统和BIP是两个系统，营销系统问题，暂时需要进入【售楼系统】后-点击右上角【技术支持】下单提问。</p>
+                            <p class="question-date">8-10</p>
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="weui-tab__content">
+            <ul class="list-normal">
+                <li class="list__item">
+                    <a href="javascript:;">
+                        <div class="list__item_hd ">
+                            <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                            <span class="tag space"><!--占位符，请勿删除--></span>
+                        </div>
+                        <div class="list__item_bd ">
+                            <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
+                            <p class="question-date">今天</p>
+                        </div>
+                        <span class="question_msg-tip">1</span>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="javascript:;">
+                        <div class="list__item_hd ">
+                            <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                            <span class="tag space"><!--占位符，请勿删除--></span>
+                        </div>
+                        <div class="list__item_bd ">
+                            <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
+                            <p class="question-date">今天</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="javascript:;">
+                        <div class="list__item_hd ">
+                            <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                            <span class="tag space"><!--占位符，请勿删除--></span>
+                        </div>
+                        <div class="list__item_bd ">
+                            <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
+                            <p class="question-date">今天</p>
+                        </div>
+                        <span class="question_msg-tip">1</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="weui-tab__content">
+            <ul class="list-normal">
+                <li class="list__item">
+                    <a href="javascript:;">
+                        <div class="list__item_hd ">
+                            <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                            <span class="tag space"><!--占位符，请勿删除--></span>
+                        </div>
+                        <div class="list__item_bd ">
+                            <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
+                            <p class="question-date">今天</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="javascript:;">
+                        <div class="list__item_hd ">
+                            <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                            <span class="tag space"><!--占位符，请勿删除--></span>
+                        </div>
+                        <div class="list__item_bd ">
+                            <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
+                            <p class="question-date">今天</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="javascript:;">
+                        <div class="list__item_hd ">
+                            <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                            <span class="tag space"><!--占位符，请勿删除--></span>
+                        </div>
+                        <div class="list__item_bd ">
+                            <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
+                            <p class="question-date">今天</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
 
 
 
@@ -105,9 +238,16 @@
     </a>
 </div>
 
+<script src="../libs/weui/weui.js"></script>
 <script src="../js/mobile.js"></script>
-<script>
 
+<script>
+    weui.tab('#tab',{
+        defaultIndex: 0,
+        onChange: function(index){
+            console.log(index);
+        }
+    });
 
 </script>
 </body>

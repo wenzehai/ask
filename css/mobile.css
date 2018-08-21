@@ -211,7 +211,6 @@ p {
 }
 
 
-
 /*顶部导航*/
 .site-nav {
     width: 100%;
@@ -340,81 +339,6 @@ p {
     height: 100%;
     position: relative;
 }
-.top-tab {
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:flex;
-    z-index:500;
-    background-color: #f5f5f5;
-    width:100%;
-    position: absolute;
-
-}
-.top-tab.split-four {
-    background-color:#f5f5f5;
-}
-.top-tab.split-three {
-    background-color:#ffffff;
-}
-.top-tab:after {
-    content: " ";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 1px;
-    border-bottom: 1px solid #ededef;
-    color: #ededef;
-    -webkit-transform-origin: 0 100%;
-    transform-origin: 0 100%;
-    -webkit-transform: scaleY(0.5);
-    transform: scaleY(0.5);
-    z-index: 2;
-}
-.top-tab__item{
-    position:relative;
-    display:block;
-    -webkit-box-flex:1;
-    -webkit-flex:1;
-    flex:1;
-    height: 44px;
-    line-height: 44px;
-    text-align:center;
-    font-size:15px;
-    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
-}
-.top-tab__panel {
-    background: transparent;
-}
-.top-tab__panel:after {
-    content: " ";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 1px;
-    border-bottom: 1px solid #ededef;
-    color: #ededef;
-    -webkit-transform-origin: 0 100%;
-    transform-origin: 0 100%;
-    -webkit-transform: scaleY(0.5);
-    transform: scaleY(0.5);
-    z-index: 2;
-}
-.top-tab + .top-tab__panel {
-    padding-bottom: 0;
-}
-.top-tab__item .link {
-    box-sizing: border-box;
-    font-size: inherit;
-    display: inline-block;
-    height: 100%;
-    border-bottom: 2px solid #f5f5f5;
-    position: relative;
-}
-.top-tab__item.top-tab__item_on .link {
-    border-bottom: 2px solid #5fbeaa;
-}
 .top-tab__reddot {
     width: 8px;
     height: 8px;
@@ -432,11 +356,15 @@ p {
     display:-webkit-flex;
     display:flex;
     position:absolute;
-    position:fixed;
+    /*position:fixed;*/
+    height: 49px;
     z-index:500;
     bottom:0;
     width:100%;
     background-color:#ffffff;
+}
+.bottom-tabbar.hide {
+    display: none;
 }
 .bottom-tabbar:before{
     content:" ";
@@ -484,6 +412,7 @@ p {
     position: relative;
     list-style: none;
     padding: 0 0 0 35px;
+    background: #ffffff;
 }
 .list__item {
     position: relative;
@@ -667,7 +596,7 @@ p {
 .panel {
     background: #ffffff;
     padding: 0 15px;
-    margin-top: 10px;
+    margin-bottom: 10px;
     position: relative;
 }
 .panel__hd {
@@ -704,6 +633,13 @@ p {
     transform: scaleY(0.5);
     z-index: 2;
 }
+.panel__hd {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-between;
+}
+
 .panel__hd:after {
     content: " ";
     position: absolute;
@@ -718,6 +654,17 @@ p {
     -webkit-transform: scaleY(0.5);
     transform: scaleY(0.5);
     z-index: 2;
+}
+.panel__hd_left {
+    flex: 2;
+}
+.panel__hd_right {
+    min-width: 1px;
+    flex: 3;
+    text-align: right;
+    font-size: 12px;
+    line-height: 40px;
+    position: relative;
 }
 .panel__title {
     margin: 0 0;
@@ -741,28 +688,65 @@ p {
 }
 
 /*下拉panel*/
-.panel_dropdown .panel__hd {
-    display: -webkit-flex;
-    display: -webkit-box;
-    display: flex;
-    justify-content: space-between;
+.dropdownToggle {
+    position: relative;
+    display: inline-block;
+    min-width: 1px;
+    height: 40px;
 }
-.panel__hd_left {
-    flex: 2;
+.dropdownToggle:before {                /*下箭头*/
+    content: " ";
+    display: block;
+    height: 6px;
+    width: 6px;
+    border-width: 0 2px 2px 0;
+    border-color: #9e9eae;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 50%;
+    margin-top: -4px;
+    left: -12px;
+    transition: transform .5s;
+    transform-origin: 50% 50%;
 }
-.panle__hd_right {
-    flex: 3;
-    text-align: right;
-    font-size: 12px;
-    line-height: 40px;
-}
-.panle__hd_right .iconfont {
-    padding: 0 4px;
+.dropdownToggle.active:before {             /*转换为上箭头*/
+    content: " ";
+    display: block;
+    height: 6px;
+    width: 6px;
+    border-width: 0 2px 2px 0;
+    border-color: #9e9eae;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 50%;
+    margin-top: -4px;
+    left: -12px;
+    transform-origin: 50% 50%;
+    transform: rotate(225deg);
+    transition: transform .5s;
 }
 
+
+
+.panel__hd_right .iconfont {
+    padding: 0 4px;
+}
+.panel.panel_dropdown .panel__bd {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+.status-tip {
+    color: #5fbeaa;
+    font-size: 14px;
+}
 /*两行表单*/
 .cells {
-    padding: 0 15px;
+    /*padding: 0 15px;*/
     box-sizing: border-box;
     position: relative;
 }
@@ -987,10 +971,28 @@ p {
     opacity:0;
     -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
 }
-
-
-
-
+/*问题回复和问题描述*/
+.question-reply {
+    font-size: 13px;
+    color: #666676;
+    padding-top: 10px;
+}
+/*附图列表*/
+.question-img {
+    list-style: none;
+    position: relative;
+    padding-bottom: 10px;
+}
+.question-img__item {
+    float: left;
+    margin: 10px 10px 0 0;
+    position: relative;
+}
+.question-img__item img {
+    width: 56px;
+    height: 56px;
+    border-radius: 2px;
+}
 
 
 
@@ -1004,6 +1006,236 @@ p {
 
 
 /*添加附件*/
+
+
+/*在线沟通*/
+.chat-content {
+    background: #f5f5f5;
+    position: relative;
+}
+.operate-bar {
+    position: relative;
+    height: 15px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.operate-bar  .iconfont {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #FFFFFF;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5);
+    text-align: center;
+    font-size: 26px;
+    line-height: 32px;
+    z-index: 500;
+}
+.operate-bar  .iconfont:active {
+    color: #C9C9C9;
+    background: rgba(0,0,0,0.8);
+}
+.chat-content__wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 15px 0;
+}
+.chat-txt {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    margin-bottom: 15px;
+    align-items: flex-start;
+    min-height: 65px;
+}
+.chat-txt.me {
+    justify-content: flex-end;
+}
+.chat-txt__user {
+    text-align: center;
+    width: 56px;
+    font-size: 12px;
+    color: #666676;
+    overflow: hidden;
+}
+.chat-user__portrait {
+    width: 39px;
+    height: 39px;
+    border: 1px solid #dcdce1;
+    border-radius: 50%;
+}
+.chat-user__username {
+    display: none;
+}
+.chat-times {
+    width: 76%;
+    margin: 0 auto 15px auto;
+    text-align: center;
+    font-size: 12px;
+    color: #9e9eae;
+}
+.chat-times__item {
+    background: #dcdce1;
+    padding: 2px 6px;
+    position: relative;
+    color: #666676;
+    line-height: 1.6666667;
+}
+.chat-times__item:after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 1em;
+    position: absolute;
+    top: 4px;
+    right: 0;
+    background: #9e9eae;
+}
+.chat-times__item:last-of-type:after {
+    display: none;
+}
+.chat-times__item:first-of-type {
+    padding-left: 12px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+.chat-times__item:last-of-type {
+    padding-right: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.chat-txt__context {
+    max-width: 208px;
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-size: 13px;
+    position: relative;
+}
+.me .chat-txt__context {
+    background: #5fbeaa;
+    color: #ffffff;
+}
+.me .chat-txt__context:after {
+    content: ' ';
+    display: block;
+    width: 6px;
+    height: 10px;
+    position: absolute;
+    top: 16px;
+    right: -4px;
+    background: url(../images/rightGreenTriangle-8.png) no-repeat center center;
+    background-size: contain;
+}
+.other .chat-txt__context {
+    background: #ffffff;
+    color: #494954;
+}
+.other .chat-txt__context:before {
+    content: ' ';
+    display: block;
+    width: 6px;
+    height: 10px;
+    position: absolute;
+    top: 16px;
+    left: -5px;
+    background: url(../images/leftWhiteTriangle-8.png) no-repeat center center;
+    background-size: contain;
+}
+.chat-time {
+    font-size: 12px;
+    color: #9e9eae;
+    margin: 10px;
+    display: none;
+}
+
+.chat-input-wrap {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #ffffff;
+    min-height: 49px;
+    padding: 10px 90px 10px 10px;
+    box-sizing: border-box;
+    /*background: #f00;*/
+}
+.full-body .chat-input-wrap {
+    position: absolute !important;
+    right: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    background: #f00 !important;
+    min-height: 49px !important;
+    padding: 10px 90px 10px 10px !important;
+    box-sizing: border-box !important;
+}
+.chat-input-wrap:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #cccccc;
+    color: #cccccc;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+.chat-input {
+    font-size: 13px;
+    width: auto;
+    vertical-align: top;
+    min-height: 26px;
+    outline: none;
+    position: relative;
+}
+.chat-input:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #cccccc;
+    color: #cccccc;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 2;
+}
+.send {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 68px;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+}
+.send:active,
+.send:focus {
+    outline: none;
+}
+.chat-content__empty-info {
+    text-align: center;
+    font-size: 13px;
+    color: #9e9eae;
+    margin-top: 200px;
+    display: none;
+}
+
+
+
+
+
 
 
 
@@ -1079,11 +1311,24 @@ section {
 .more-service {
     padding: 0;
 }
+.more-service .panel__hd:after {
+    display: none;
+}
 .more-service .panel__hd {
     padding-left: 15px;
 }
 
 /*  ====================================  我要提问-用户  ====================================  */
+.ask .main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 49px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
 .ask .step-bar {
     background: #ffffff;
     /*height: 85px;*/
@@ -1177,38 +1422,160 @@ section {
 
 /*  ====================================  问题列表-用户  ====================================  */
 .question-list {
-    padding-top: 98px;
+    padding-top: 54px;
 }
 .question-list .tab-bar {
     position: fixed;
     top: 54px;
     left: 0;
 }
+.question-list .weui-navbar__item {
+    background: #f5f5f5;
+}
+.question-list .weui-navbar__item .link {
+    /*border-bottom: 2px solid #f5f5f5;*/
+}
+.question-list .weui-navbar__item.weui-bar__item_on .link {
+    border-bottom: 2px solid #5fbeaa;
+    color: #5fbeaa;
+}
 
 /*  ====================================  问题详情-用户  ====================================  */
 .user-question-detail {
-
+    /*overflow: hidden;
+    height:100%;*/
 }
-.user-question-detail .top-tab {
+.user-question-detail .weui-tab {
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 49px;
+    border-top: 1px solid transparent;
+}
+.user-question-detail .article-hd {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100000;
+}
+.user-question-detail .weui-navbar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    position: absolute;
+    z-index: 500;
+    top: 70px;
+    width: 100%;
+    background-color: #ffffff;
+}
+.user-question-detail .weui-tab__panel {
+    height: 100%;
+    overflow: auto;
+    padding-top: 124px;
+    padding-bottom: 49px;
+}
+.user-question-detail .bottom-btn-wrap {
+    position: absolute;
+    bottom:0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -webkit-box;
+    justify-content: space-between;
+    z-index: 100;
+}
+.user-question-detail .bottom-btn__item {
+    flex: 1;
+    height: 49px;
+    overflow: hidden;
     position: relative;
-    background: #ffffff;
-
+    width: 50%;
+    text-align: center;
 }
-.user-question-detail .top-tab + .top-tab__panel {
-    padding-bottom: 44px;
+.user-question-detail .bottom-btn_warn {
+    background: #ffc868;
+    border: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 49px;
 }
-
+.user-question-detail .bottom-btn_primary {
+    background: #5fbeaa;
+    border: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 49px;
+}
+.user-question-detail .cell-line-label {
+    line-height: 40px;
+}
     /*  ====================================  在线留言-用户  ====================================  */
 .user-chat {
-
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    position: relative;
 }
-
+.user-chat .main {
+    position: absolute;
+    top: 0;
+    bottom: 49px;
+    overflow-y: scroll;
+    width: 100%;
+    height: calc(100vh - 49px);
+    /*background: #0f0;*/
+    -webkit-overflow-scrolling: touch;
+}
+.user-chat .main .chat-content {
+    min-height: 600px;
+}
 /*  ====================================  搜索-用户  ====================================  */
 .user-search {
 
 }
-
-/*  ====================================  待办列表-顾问  ====================================  */
+.user-search .search-bar {
+    position: relative;
+}
+.user-search .panel_dropdown .panel__bd {
+    padding: 15px 0;
+}
+.filter-btn-wrap {
+    margin-top: 15px;
+}
+.user-search .qingchu-btn,
+.user-search .list-numbers {
+    color: #5fbeaa;
+}
+.search-history {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    list-style: none;
+}
+.search-history__item {
+    padding: 0 10px;
+    background: #ededef;
+    color: #666676;
+    line-height: 22px;
+    border-radius: 11px;
+    margin-right: 10px;
+}
+.search-history__item:active {
+    background: #9e9eae;
+}
+    /*  ====================================  待办列表-顾问  ====================================  */
 .consultant-todo {
 
 }
