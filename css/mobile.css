@@ -31,6 +31,17 @@ a {
 fieldset {
     padding: 0;
     border: 0;
+    transition: all ease-in 0.5s;
+    width: 375px;
+    float: left;
+}
+.step-content {
+    position: absolute;
+    top: 130px;
+    left: 0;
+    width: 1130px;
+    overflow: hidden;
+    transition: all ease-in 1s;
 }
 @font-face {font-family: "iconfont";
     src: url('../libs/iconfont/iconfont.eot'); /* IE9*/
@@ -1341,7 +1352,7 @@ section {
     background: #ffffff;
     /*position: absolute;*/
     /*left: 10px;*/
-    display: none;
+    display: block;
 }
 .ask .step-bar:after {
     content: " ";

@@ -33,9 +33,9 @@
         </ul>
     </section>
     <!--表单内容填写-->
-    <section class="step-content">
-        <form id="msform">
-            <fieldset style="display: block;">
+    <section class="step-content clearfix">
+        <form id="msform" >
+            <fieldset style="display: block;" class="1">
                 <div class="cells">
                     <div class="cell_dbline">
                         <div class="cell_dbline__hd">
@@ -60,7 +60,7 @@
                     </div>
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset class="2">
                 <div class="cells">
                     <div class="cell_dbline">
                         <div class="cell_dbline__hd">
@@ -100,7 +100,7 @@
                     </div>
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset class="3">
                 <div class="cells">
                     <div class="cell_dbline">
                         <div class="cell_dbline__hd">
@@ -149,16 +149,19 @@
         var next = document.querySelectorAll(".next");
         var previous = document.querySelectorAll(".previous");
         var fieldset = document.querySelectorAll("fieldset");
+        var stepContent = document.querySelector(".step-content");
         for(var i=0; i < next.length; i++){
             next[i].index = i;
             previous[i].index = i+1;
             fieldset[i].index=i;
             next[i].onclick = function () {
-                fieldset[this.index].style.display = "none";
+                stepContent.style.left = -375*(this.index + 1) + "px";
                 fieldset[this.index+ 1].style.display = "block";
-            }
+            };
             previous[i].onclick = function () {
-                fieldset[this.index].style.display = "none";
+                console.log(this.index);
+                var left = fieldset[this.index].parentElement.parentElement.style.left;
+                stepContent.style.left = (parseInt(left) + 375)  + "px";
                 fieldset[this.index- 1].style.display = "block";
             }
         }
