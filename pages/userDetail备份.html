@@ -16,39 +16,37 @@
 </head>
 <body class="user-question-detail">
 <div class="weui-tab" id="userDetailTab">
-        <div class="article-hd">
-            <h1 class="article-hd__title">在编辑新闻的时候，单击图片上传按钮，不显示添加按钮，图片无法上传 ？</h1>
+    <div class="article-hd">
+        <h1 class="article-hd__title">在编辑新闻的时候 ？</h1>
+    </div>
+    <div class="weui-navbar">
+        <div class="weui-navbar__item weui-navbar__item_on">
+            <a href="javascript:;" class="link">描述与回复</a>
         </div>
-        <div class="weui-navbar">
-            <div class="weui-navbar__item weui-navbar__item_on">
-                <a href="javascript:;" class="link">描述与回复</a>
-            </div>
-            <div class="weui-navbar__item">
-                <a href="javascript:;" class="link">历史记录</a>
-            </div>
-            <div class="weui-navbar__item">
-                <a href="javascript:;" class="link">评价记录</a>
-            </div>
+        <div class="weui-navbar__item">
+            <a href="javascript:;" class="link">历史记录</a>
         </div>
-
+        <div class="weui-navbar__item">
+            <a href="javascript:;" class="link">评价记录</a>
+        </div>
+    </div>
 
     <div class="weui-tab__panel">
         <div class="weui-tab__content">
             <!--问题回复-->
-            <div class="panel panel_dropdown">
+            <div class="panel">
                 <div class="panel__hd">
                     <div class="panel__hd_left">
                         <h2 class="panel__title">问题回复</h2>
                     </div>
-                    <div class="panle__hd_right">
+                    <div class="panel__hd_right">
                         <span class="status-tip">已回复，请验证</span>
-                        <!--<a class="dropdown-link" href="javascript:;"><span class="iconfont icon-down-triangle"></span></a>-->
                     </div>
                 </div>
                 <div class="panel__bd">
-                    <p class="question-reply">
+                    <div class="question-reply">
                         问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容
-                    </p>
+                    </div>
                     <ul class="question-img clearfix">
                         <li class="question-img__item"><a href="javascript:;"><img src="../images/eg.jpg" alt=""></a></li>
                         <li class="question-img__item"><a href="javascript:;"><img src="../images/eg.jpg" alt=""></a></li>
@@ -62,9 +60,9 @@
                     <h2 class="panel__title">问题描述</h2>
                 </div>
                 <div class="panel__bd">
-                    <p class="question-reply">
+                    <div class="question-reply">
                         问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述
-                    </p>
+                    </div>
                     <ul class="question-img clearfix">
                         <li class="question-img__item"><a href="javascript:;"><img src="../images/eg.jpg" alt=""></a></li>
                         <li class="question-img__item"><a href="javascript:;"><img src="../images/eg.jpg" alt=""></a></li>
@@ -73,13 +71,13 @@
             </div>
 
             <!--基本信息-->
-            <div class="panel panel_dropdown">
+            <div class="panel panel_dropdown baseInfo">
                 <div class="panel__hd">
                     <div class="panel__hd_left">
                         <h2 class="panel__title">基本信息</h2>
                     </div>
-                    <div class="panle__hd_right">
-                        <span class="iconfont icon-down-triangle"></span>
+                    <div class="panel__hd_right">
+                        <span class="dropdownToggle">下拉</span>
                     </div>
                 </div>
                 <div class="panel__bd">
@@ -135,7 +133,7 @@
 
         <!--底部按钮-->
         <div class="bottom-btn-wrap">
-            <div class="bottom-btn__item"><a class="bottom-btn_warn ">未解决，继续追问</a></div>
+            <div class="bottom-btn__item"><a href="resend.html" class="bottom-btn_warn ">未解决，继续追问</a></div>
             <div class="bottom-btn__item"><a class="bottom-btn_primary " id="androidDialog1">去评价</a></div>
         </div>
 
@@ -151,6 +149,7 @@
 </div>
 
 
+<script src="../js/util.js"></script>
 <script src="../libs/weui/weui.js"></script>
 <script src="../js/mobile.js"></script>
 <script>
@@ -162,7 +161,7 @@
     });
     //调出评价弹窗
     window.onload = function(){
-      var androidDialog1 = document.getElementById("androidDialog1");
+        var androidDialog1 = document.getElementById("androidDialog1");
         var str = "这里是文字内容<br/>这里是文字内容"
         androidDialog1.onclick = function () {
             weui.dialog({
@@ -183,7 +182,39 @@
                     }
                 }]
             })
+        };
+
+        //页面载入时，设置mian盒子距离顶部端距离，设置下拉面板展开；
+        var articleHd = util.q(".article-hd");
+        var tabPanelWrap = util.q(".weui-tab__panel");
+        var titleHeight =parseInt(window.getComputedStyle(articleHd)["height"]);        //获取标题高度
+
+        var navbar = util.q(".weui-navbar");
+        navbar.style.top = titleHeight + "px";                                          //设置标签距离顶部端距离
+
+        tabPanelWrap.style.paddingTop = titleHeight + 54 +"px";
+
+
+        console.log(titleHeight);
+
+        //下拉面板
+        var dropdownLink = util.q(".dropdownToggle");
+
+        for (var i=0; i< dropdownLink.length; i++) {
+            dropdownLink[i].onclick = function () {
+                var panel = this.parentElement.parentElement.nextElementSibling;
+
+                if(panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                    this.classList.remove("active");
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + 'px';
+                    this.classList.add("active");
+                }
+            }
         }
+
+
 
     };
 

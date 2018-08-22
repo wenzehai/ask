@@ -71,19 +71,19 @@
 
                 <div class="cell-line cell-line_readonly">
                     <div class="cell-line__hd">
-                        <label for="leibie" class="cell-line-label">开始时间</label>
+                        <label for="startTime" class="cell-line-label">开始时间</label>
                     </div>
                     <div class="cell-line__bd">
-                        <input type="text" class="cell-line__text-input" placeholder="请选择开始时间" value="">
+                        <input type="text" id="startTime" class="cell-line__text-input" placeholder="请选择开始时间" value="">
                     </div>
                 </div>
 
                 <div class="cell-line cell-line_text-input">
                     <div class="cell-line__hd">
-                        <label for="leibie" class="cell-line-label">结束时间</label>
+                        <label for="endTime" class="cell-line-label">结束时间</label>
                     </div>
                     <div class="cell-line__bd">
-                        <input type="text" class="cell-line__text-input" placeholder="请选择结束时间" value="">
+                        <input type="text" id="endTime" class="cell-line__text-input" placeholder="请选择结束时间" value="">
                     </div>
                 </div>
 
@@ -158,10 +158,28 @@
     </li>
 </ul>
 
+<script src="../js/util.js"></script>
 <script src="../libs/weui/weui.js"></script>
 <script src="../js/mobile.js"></script>
 <script>
+window.onload = function () {
+    var startTime = util.q("#startTime");
 
+    util.addHandler(startTime,"focus",function (event) {
+        weui.datePicker({
+            start: 1990,
+            end: 2000,
+            defaultValue: [1991, 6, 9],
+            onChange: function(result){
+                console.log(result);
+            },
+            onConfirm: function(result){
+                console.log(result);
+            },
+            id: 'datePicker'
+        });
+    });
+};
 
 </script>
 </body>

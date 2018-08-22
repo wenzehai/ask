@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>我要提问</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <script src="../libs/flexible/flexible.min.js"></script>                                              <!--采用rem布局方式，尺寸根据html的font-size大小来自动响应调整，文字大小继承自body，采用em方式继承-->
-    <link rel="stylesheet" type="text/css" href="../libs/normalize/normalize.css">                                        <!--浏览器原生样式重置-->
-    <link rel="stylesheet" type="text/css" href="../libs/iconfont/iconfont.css">                        <!--字体图标，与PC端公用一个-->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script src="../libs/flexible/flexible.min.js"></script>
+    <!--采用rem布局方式，尺寸根据html的font-size大小来自动响应调整，文字大小继承自body，采用em方式继承-->
+    <link rel="stylesheet" type="text/css" href="../libs/normalize/normalize.css">
+    <!--浏览器原生样式重置-->
+    <link rel="stylesheet" type="text/css" href="../libs/iconfont/iconfont.css">
+    <!--字体图标，与PC端公用一个-->
     <link rel="stylesheet" type="text/css" href="../libs/weui/weui.css">
-    <link rel="stylesheet" type="text/css" href="../css/mobile.css">                                                      <!--所有页面的css样式统一汇总在此页面，每个页面加前缀**Page-->
+    <link rel="stylesheet" type="text/css" href="../css/mobile.css">
+    <!--所有页面的css样式统一汇总在此页面，每个页面加前缀**Page-->
     <style>
 
     </style>
@@ -17,8 +22,8 @@
 <div class="main">
     <!--步骤条-->
     <section class="step-bar">
-        <ul class="step-bar__wrap clearfix" id="progressbar">
-            <li  class="active step-bar__item">
+        <ul class="step-bar__wrap clearfix">
+            <li class="active step-bar__item">
                 <span class="number">1</span>
                 <p>选择对应系统</p>
             </li>
@@ -32,14 +37,16 @@
             </li>
         </ul>
     </section>
+
     <!--表单内容填写-->
     <section class="step-content clearfix">
-        <form id="msform" >
-            <fieldset style="display: block;" class="1">
+        <form id="msform" class="form-wrap clearfix">
+            <fieldset style="display: block;" class="1 show">
                 <div class="cells">
                     <div class="cell_dbline">
                         <div class="cell_dbline__hd">
-                            <label class="cell_dbline__label" for="001">系统</label><span class="wrong-tip">这里是错误提示预留位置</span>
+                            <label class="cell_dbline__label" for="001">系统</label><span
+                                class="wrong-tip">这里是错误提示预留位置</span>
                         </div>
                         <div class="cell_dbline__bd">
                             <input type="text" id="001" class="cell_dbline__input" placeholder="请选择系统">
@@ -48,7 +55,8 @@
                     </div>
                     <div class="cell_dbline">
                         <div class="cell_dbline__hd">
-                            <label class="cell_dbline__label" for="002">类别</label><span class="wrong-tip">这里是错误提示预留位置</span>
+                            <label class="cell_dbline__label" for="002">类别</label><span
+                                class="wrong-tip">这里是错误提示预留位置</span>
                         </div>
                         <div class="cell_dbline__bd">
                             <input type="text" id="002" class="cell_dbline__input" placeholder="请选择类别">
@@ -56,7 +64,7 @@
                         </div>
                     </div>
                     <div class="cell_dbline">
-                        <button type="button" class="btn btn_primary next">下一步</button>
+                        <button type="button" class="btn btn_primary next stepNext">下一步</button>
                     </div>
                 </div>
             </fieldset>
@@ -64,7 +72,8 @@
                 <div class="cells">
                     <div class="cell_dbline">
                         <div class="cell_dbline__hd">
-                            <label class="cell_dbline__label" for="">主题</label><span class="wrong-tip">这里是错误提示预留位置</span>
+                            <label class="cell_dbline__label" for="">主题</label><span
+                                class="wrong-tip">这里是错误提示预留位置</span>
                         </div>
                         <div class="cell_dbline__bd">
                             <input type="text" id="" class="cell_dbline__input" placeholder="请输入问题主题">
@@ -72,29 +81,37 @@
                     </div>
                     <div class="cell_dbline">
                         <div class="cell_dbline__hd">
-                            <label class="cell_dbline__label" for="">问题描述</label><span class="wrong-tip">这里是错误提示预留位置</span>
+                            <label class="cell_dbline__label" for="">问题描述</label><span
+                                class="wrong-tip">这里是错误提示预留位置</span>
                         </div>
                         <div class="cell_dbline__bd">
-                            <textarea name="" id="aaa" cols="30" class="cell_dbline__textarea" rows="6" placeholder="请输入问题描述" ></textarea>
+                            <textarea name="" id="aaa" cols="30" class="cell_dbline__textarea" rows="6"
+                                      placeholder="请输入问题描述"></textarea>
                         </div>
                     </div>
-                    <div class="cell_dbline clearfix">
-                        <div class="cell_dbline__hd">
-                            <label class="cell_dbline__label" for="">上传图片</label><span style="display: block;" class="uploader__info">0/3&nbsp;&nbsp;您最多上传三张图片</span>
-                        </div>
-                        <div class="cell_dbline__bd">
-                            <ul class="uploader__files" id="uploaderFiles">
-                                <li class="uploader__file" style="background-image:url(../images/eg.jpg)"></li>
-                                <li class="uploader__file" style="background-image:url(../images/eg.jpg)"></li>
-                            </ul>
-                            <div class="uploader__input-box" >
-                                <input id="uploaderInput" class="uploader__input" type="file" accept="image/*" multiple />
+                    <div class="weui-cells weui-cells_form uploader-cell" id="uploader">
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <div class="weui-uploader">
+                                    <div class="weui-uploader__hd">
+                                        <p class="weui-uploader__title">图片上传</p>
+                                        <div class="weui-uploader__info"><span id="uploadCount">0</span>/3 &nbsp;您最多上传3张照片
+                                        </div>
+                                    </div>
+                                    <div class="weui-uploader__bd">
+                                        <ul class="weui-uploader__files" id="uploaderFiles"></ul>
+                                        <div class="weui-uploader__input-box">
+                                            <input id="uploaderInput" class="weui-uploader__input" type="file"
+                                                   accept="image/*" capture="camera" multiple=""/>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="cell_dbline">
                         <div class="btn-area_inline">
-                            <button type="button" class="btn btn_default previous">上一步</button>
+                            <button type="button" class="btn btn_default previous stepPrevious">上一步</button>
                             <button type="button" class="btn btn_primary next">下一步</button>
                         </div>
                     </div>
@@ -104,17 +121,56 @@
                 <div class="cells">
                     <div class="cell_dbline">
                         <div class="cell_dbline__hd">
-                            <label class="cell_dbline__label" for="">系统</label><span class="wrong-tip">这里是错误提示预留位置</span>
+                            <label class="cell_dbline__label" for="username">姓名</label><span class="wrong-tip">这里是错误提示预留位置</span>
                         </div>
                         <div class="cell_dbline__bd">
-                            <input type="text" id="" class="cell_dbline__input" placeholder="请选择系统">
-                            <span class="iconfont icon-down-triangle"></span>
+                            <input type="text" id="username" class="cell_dbline__input" placeholder="请输入用户名" value="张小伟"
+                                   disabled>
+                        </div>
+                    </div>
+                    <div class="cell_dbline">
+                        <div class="cell_dbline__hd">
+                            <label class="cell_dbline__label" for="unit">单位</label><span
+                                class="wrong-tip">这里是错误提示预留位置</span>
+                        </div>
+                        <div class="cell_dbline__bd">
+                            <input type="text" id="unit" class="cell_dbline__input" placeholder="请输入单位" value="碧桂园总部"
+                                   disabled>
+                        </div>
+                    </div>
+                    <div class="cell_dbline">
+                        <div class="cell_dbline__hd">
+                            <label class="cell_dbline__label" for="tel">电话</label><span
+                                class="wrong-tip">这里是错误提示预留位置</span>
+                        </div>
+                        <div class="cell_dbline__bd">
+                            <input type="tel" id="tel" class="cell_dbline__input" placeholder="张小伟"
+                                   value="15088888888">
+                        </div>
+                    </div>
+                    <div class="cell_dbline">
+                        <div class="cell_dbline__hd">
+                            <label class="cell_dbline__label" for="qq">QQ</label><span
+                                class="wrong-tip">这里是错误提示预留位置</span>
+                        </div>
+                        <div class="cell_dbline__bd">
+                            <input type="number" id="qq" class="cell_dbline__input" placeholder="张小伟"
+                                   value="4512785442">
+                        </div>
+                    </div>
+                    <div class="cell_dbline">
+                        <div class="cell_dbline__hd">
+                            <label class="cell_dbline__label" for="wechat">微信</label><span
+                                class="wrong-tip">这里是错误提示预留位置</span>
+                        </div>
+                        <div class="cell_dbline__bd">
+                            <input type="text" id="wechat" class="cell_dbline__input" placeholder="请输入微信号（选填）">
                         </div>
                     </div>
                     <div class="cell_dbline">
                         <div class="btn-area_inline">
                             <button type="button" class="btn btn_default previous">上一步</button>
-                            <button type="submit" class="btn btn_primary" >提交</button>
+                            <button type="submit" class="btn btn_primary">提交</button>
                         </div>
                     </div>
                 </div>
@@ -140,55 +196,167 @@
 </div>
 
 
-
+<script src="../js/util.js"></script>
 <script src="../js/mobile.js"></script>
 <script src="../libs/weui/weui.min.js"></script>
 <script>
     window.onload = function () {
-        //下一步需要优化，缺少过渡和动画
-        var next = document.querySelectorAll(".next");
-        var previous = document.querySelectorAll(".previous");
-        var fieldset = document.querySelectorAll("fieldset");
-        var stepContent = document.querySelector(".step-content");
-        for(var i=0; i < next.length; i++){
-            next[i].index = i;
-            previous[i].index = i+1;
-            fieldset[i].index=i;
+
+        var next = util.qa(".next");
+        var previous = util.qa(".previous");
+        var fieldset = util.qa("fieldset");
+        var stepNum = util.qa(".step-bar__item");
+        var formWrap = util.q(".form-wrap");
+
+        //设置fieldset父元素宽度，使之宽度与屏幕的宽度相等，而包含fieldset的表单form宽度是屏幕宽度的三倍
+        var clientWidth = document.body.clientWidth;
+        formWrap.style.width = clientWidth * 3 + "px";
+        for (var i = 0; i < fieldset.length; i++) {
+            fieldset[i].style.width = clientWidth + "px";
+        }
+        //一个类似于轮播的切换
+        for (var i = 0; i < next.length; i++) {
+            next[i].index = stepNum[i].index = fieldset[i].index = i;
+            previous[i].index = i + 1;
+
             next[i].onclick = function () {
-                stepContent.style.left = -375*(this.index + 1) + "px";
-                fieldset[this.index+ 1].style.display = "block";
+                formWrap.style.left = -clientWidth * (this.index + 1) + "px";             //点击一次下一步按钮，往左移动一个屏幕宽度
+                stepNum[this.index].classList.add("showLine");                             //按钮右边端线条变绿色
+                stepNum[this.index].firstElementChild.innerHTML = "<span class='iconfont icon-gou'></span>";                             //第一个按钮右边端线条显示
+                stepNum[this.index + 1].classList.add("active");                        //步骤调点亮数字2
+                fieldset[this.index +1 ].classList.add("show");
+                fieldset[this.index].classList.remove("show");
+                fieldset[this.index].style.opacity = 0;                                 //点击按钮所在的fieldset消失，但是在完全消失隐藏后，透明度又恢复正常，是为了保证卡换回来时有同样端效果，所有设置了定时器
+                var _index = this.index;
+                setTimeout(function () {
+                    fieldset[_index].style.opacity = 1;
+                }, 500);
             };
             previous[i].onclick = function () {
-                console.log(this.index);
-                var left = fieldset[this.index].parentElement.parentElement.style.left;
-                stepContent.style.left = (parseInt(left) + 375)  + "px";
-                fieldset[this.index- 1].style.display = "block";
+                var left = fieldset[this.index].parentElement.style.left;
+                formWrap.style.left = (parseInt(left) + clientWidth) + "px";
+                stepNum[this.index].classList.remove("active");
+                stepNum[this.index - 1].classList.remove("showLine");                             //按钮右边端线条变灰色
+                stepNum[this.index].firstElementChild.innerHTML = this.index + 1;
+                fieldset[this.index -1].classList.add("show");
+                fieldset[this.index ].classList.remove("show");
+                fieldset[this.index].style.opacity = 0;
+                var _index = this.index;
+                setTimeout(function () {
+                    fieldset[_index].style.opacity = 1;
+                }, 500);
             }
         }
 
         //软键盘弹出时，隐藏底部导航栏
-        var docmHeight = document.documentElement.clientHeight;
-        window.onresize = function () {
-            var showHeight =  document.documentElement.clientHeight;
-            var bottomTabbar = document.getElementsByClassName("bottom-tabbar")[0];
-            var mainBox = document.querySelector(".main");
-            if(showHeight < docmHeight) {
+        var docmHeight = document.documentElement.clientHeight;             //页面载入时屏幕高度
+        var bottomTabbar = util.q(".bottom-tabbar");
+        var mainBox = util.q(".main");
+
+        util.addHandler(window, "resize", function () {
+            var showHeight = document.documentElement.clientHeight;        //窗口变化时，屏幕显示的高度
+            var showFieldset = util.qa("fieldset");
+            if (showHeight < docmHeight) {
                 bottomTabbar.classList.add("hide");
                 mainBox.style.bottom = "0";
-            }else {
-                if(bottomTabbar.className.indexOf("hide") !== -1){
+            } else {
+                if (bottomTabbar.className.indexOf("hide") !== -1 && showFieldset[0].className.indexOf("show") !== -1) {
                     bottomTabbar.classList.remove("hide");
-                    mainBox.style.bottom = "49px";
+                    mainBox.style.bottom = "49px";                          //主体内容采用绝对定位，距离底部49px，在导航栏消失时需要重新设置
                 }
+            }
+        });
+
+        //第一个下一步按钮点击时隐藏底部导航栏
+        var stepNext = util.q(".stepNext");
+        util.addHandler(stepNext, "click", hideBottomTabbar);
+
+        function hideBottomTabbar() {
+            bottomTabbar.classList.add("hide");
+            mainBox.style.bottom = 0;
+        }
+
+        //第一个上一步按钮点击时显示底部导航栏
+        var stepPrevious = util.q(".stepPrevious");
+        util.addHandler(stepPrevious, "click", showBottomTabbar);
+
+        function showBottomTabbar() {
+            if (bottomTabbar.className.indexOf("hide") !== -1) {
+                bottomTabbar.classList.remove("hide");
+                mainBox.style.bottom = "49px";
             }
         }
 
 
+        //图片上传，沿用weui.js自带的上传
+        var uploadCount = 0;
+        weui.uploader('#uploader', {
+            url: 'http://localhost:8081',
+            auto: true,
+            type: 'file',
+            fileVal: 'fileVal',
+            compress: {
+                width: 1600,
+                height: 1600,
+                quality: .8
+            },
+            onBeforeQueued: function (files) {
+                // `this` 是轮询到的文件, `files` 是所有文件
+
+                if (["image/jpg", "image/jpeg", "image/png", "image/gif"].indexOf(this.type) < 0) {
+                    weui.alert('请上传图片');
+                    return false; // 阻止文件添加
+                }
+                if (this.size > 10 * 1024 * 1024) {
+                    weui.alert('请上传不超过10M的图片');
+                    return false;
+                }
+                if (files.length > 3) { // 防止一下子选择过多文件
+                    weui.alert('最多只能上传5张图片，请重新选择');
+                    return false;
+                }
+                if (uploadCount + 1 > 3) {
+                    weui.alert('最多只能上传5张图片');
+                    return false;
+                }
+
+                ++uploadCount;
+
+                // return true; // 阻止默认行为，不插入预览图的框架
+            },
+            onQueued: function () {
+                console.log(this);
+
+                // console.log(this.status); // 文件的状态：'ready', 'progress', 'success', 'fail'
+                // console.log(this.base64); // 如果是base64上传，file.base64可以获得文件的base64
+
+                // this.upload(); // 如果是手动上传，这里可以通过调用upload来实现；也可以用它来实现重传。
+                // this.stop(); // 中断上传
+
+                // return true; // 阻止默认行为，不显示预览图的图像
+            },
+            onBeforeSend: function (data, headers) {
+                console.log(this, data, headers);
+                // $.extend(data, { test: 1 }); // 可以扩展此对象来控制上传参数
+                // $.extend(headers, { Origin: 'http://127.0.0.1' }); // 可以扩展此对象来控制上传头部
+
+                // return false; // 阻止文件上传
+            },
+            onProgress: function (procent) {
+                console.log(this, procent);
+                // return true; // 阻止默认行为，不使用默认的进度显示
+            },
+            onSuccess: function (ret) {
+                console.log(this, ret);
+                // return true; // 阻止默认行为，不使用默认的成功态
+            },
+            onError: function (err) {
+                console.log(this, err);
+                // return true; // 阻止默认行为，不使用默认的失败态
+            }
+        });
 
     };
-
-
-
 
 
 </script>
