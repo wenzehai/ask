@@ -22,163 +22,334 @@
 
 <!--搜索框-->
 <div class="search-bar" id="search_bar">
-    <form class="search-bar__form">
+    <form class="search-bar__form" id="singleSearchForm" action="http://localhost:63342/ask/pages/userSearch.html?_ijt=rbr9f6cr5m0ssc8ru0d304jj1j">
         <div class="search-bar__box">
-            <input type="search" class="search-bar__input" id="search_input" placeholder="请输入问题标题或单号"/>
+            <input type="search" class="search-bar__input" name="subject" id="search_input" placeholder="请输入问题标题或单号"/>
             <i class="iconfont">&#xe61e;</i>
             <!--<span>搜索</span>-->
         </div>
     </form>
 </div>
-<!--高级搜索-->
-<div class="panel panel_dropdown">
-    <div class="panel__hd">
-        <div class="panel__hd_left">
-            <h2 class="panel__title">共搜索到<span class="list-numbers">2000</span>条</h2>
-        </div>
-        <div class="panle__hd_right">
-            <a class="dropdown-link" href="javascript:;"><span class="iconfont icon-down-triangle"></span>筛选</a>
-        </div>
-    </div>
-    <div class="panel__bd">
-        <form class="">
-            <div class="cells">
-                <div class="cell-line cell-line_select">
-                    <div class="cell-line__hd">
-                        <label for="system" class="cell-line-label">系统</label>
-                    </div>
-                    <div class="cell-line__bd">
-                        <select class="cell-line-select" name="select2" id="system">
-                            <option value="1">BIP系统</option>
-                            <option value="2">SSC财务系统</option>
-                            <option value="3">商旅平台</option>
-                        </select>
-                    </div>
-                </div>
 
-                <div class="cell-line cell-line_select">
-                    <div class="cell-line__hd">
-                        <label for="leibie" class="cell-line-label">类别</label>
-                    </div>
-                    <div class="cell-line__bd">
-                        <select class="cell-line-select" name="select2" id="leibie" disabled>
-                            <option value="1">BIP系统</option>
-                            <option value="2">SSC财务系统</option>
-                            <option value="3">商旅平台</option>
-                        </select>
-                    </div>
-                </div>
 
-                <div class="cell-line cell-line_readonly">
-                    <div class="cell-line__hd">
-                        <label for="startTime" class="cell-line-label">开始时间</label>
-                    </div>
-                    <div class="cell-line__bd">
-                        <input type="text" id="startTime" class="cell-line__text-input" placeholder="请选择开始时间" value="">
-                    </div>
-                </div>
 
-                <div class="cell-line cell-line_text-input">
-                    <div class="cell-line__hd">
-                        <label for="endTime" class="cell-line-label">结束时间</label>
-                    </div>
-                    <div class="cell-line__bd">
-                        <input type="text" id="endTime" class="cell-line__text-input" placeholder="请选择结束时间" value="">
-                    </div>
-                </div>
 
-            </div>
-            <div class="cells filter-btn-wrap">
-                <button class="btn btn_primary" type="submit">筛选</button>
-            </div>
-        </form>
-    </div>
-</div>
 <!--历史记录-->
-<div class="panel panel_dropdown">
+<div class="panel" style="display: none;">
     <div class="panel__hd">
         <div class="panel__hd_left">
             <h2 class="panel__title">历史记录</h2>
         </div>
-        <div class="panle__hd_right">
-            <a href="javascript:;" class="qingchu-btn">清除记录</a>
-            <!--<a class="dropdown-link" href="javascript:;"><span class="iconfont icon-down-triangle"></span></a>-->
+        <div class="panel__hd_right">
+            <a href="javascript:;" class="clearHistory">清除记录</a>
         </div>
     </div>
     <div class="panel__bd">
-        <ul class="search-history">
-            <li class="search-history__item">招标</li>
-            <li class="search-history__item">权限</li>
-            <li class="search-history__item">财务单据</li>
-        </ul>
+        <ul class="search-history" id="searchHistoryWrap"></ul>
     </div>
 </div>
 
-
 <!--问题列表-->
-<ul style="display: block;" class="list-normal">
-    <li class="list__item">
-        <a href="javascript:;">
-            <div class="list__item_hd ">
-                <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
-                <span class="tag space"><!--占位符，请勿删除--></span>
+<div class="listWrap">
+    <!--高级搜索-->
+    <div class="panel panel_dropdown filter-search" style="display: block; z-index: 100;position: absolute;width: 100%;box-sizing: border-box;">
+        <div class="panel__hd">
+            <div class="panel__hd_left">
+                <h2 class="panel__title">共搜索到<span class="list-numbers">2000</span>条</h2>
             </div>
-            <div class="list__item_bd ">
-                <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
-                <p class="question-date">今天</p>
+            <div class="panel__hd_right">
+                <span class="dropdownToggle">筛选</a></span>
+                <!--<a class="dropdown-link" href="javascript:;">-->
             </div>
-            <span class="question_msg-tip">1</span>
-        </a>
-    </li>
-    <li class="list__item">
-        <a href="javascript:;">
-            <div class="list__item_hd ">
-                <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
-                <span class="tag space"><!--占位符，请勿删除--></span>
-            </div>
-            <div class="list__item_bd ">
-                <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
-                <p class="question-date">今天</p>
-            </div>
-            <span class="question_msg-tip">1</span>
-        </a>
-    </li>
-    <li class="list__item">
-        <a href="javascript:;">
-            <div class="list__item_hd ">
-                <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
-                <span class="tag space"><!--占位符，请勿删除--></span>
-            </div>
-            <div class="list__item_bd ">
-                <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
-                <p class="question-date">今天</p>
-            </div>
-            <span class="question_msg-tip">1</span>
-        </a>
-    </li>
-</ul>
+        </div>
+        <div class="panel__bd">
+            <form class="" id="filterSearchForm" action="http://localhost:63342/ask/pages/userSearch.html?_ijt=rbr9f6cr5m0ssc8ru0d304jj1j">
+                <input type="hidden" value="" name="subject" id="hiddenSubject">
+                <div class="cells">
+                    <div class="cell-line cell-line_select">
+                        <div class="cell-line__hd">
+                            <label for="system" class="cell-line-label">系统</label>
+                        </div>
+                        <div class="cell-line__bd">
+                            <select class="cell-line-select" name="system" id="system">
+                                <option value="1" selected>BIP系统</option>
+                                <option value="2">SSC财务系统</option>
+                                <option value="3">商旅平台</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cell-line cell-line_select">
+                        <div class="cell-line__hd">
+                            <label for="category" class="cell-line-label">类别</label>
+                        </div>
+                        <div class="cell-line__bd">
+                            <select class="cell-line-select" name="category" id="category" >
+                                <option value="1">权限</option>
+                                <option value="2" selected>流程</option>
+                                <option value="3">单据</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cell-line cell-line_readonly">
+                        <div class="cell-line__hd">
+                            <label for="startTime" class="cell-line-label">开始时间</label>
+                        </div>
+                        <div class="cell-line__bd">
+                            <input type="text" id="startTime" name="startTime" class="cell-line__text-input" placeholder="请选择开始时间" value="">
+                        </div>
+                    </div>
+
+                    <div class="cell-line cell-line_text-input">
+                        <div class="cell-line__hd">
+                            <label for="endTime" class="cell-line-label">结束时间</label>
+                        </div>
+                        <div class="cell-line__bd">
+                            <input type="text" id="endTime" name="endTime" class="cell-line__text-input" placeholder="请选择结束时间" value="">
+                        </div>
+                    </div>
+
+                    <div class="cell-line cell-line_text-input">
+                        <button class="btn btn_primary filter-btn" type="submit" id="filterBtn">筛选</button>
+                    </div>
+                </div>
+                <!-- <div class="cells filter-btn-wrap">
+
+                 </div>-->
+            </form>
+        </div>
+    </div>
+
+    <!--问题列表-->
+    <ul class="list-normal"  style="display: block;padding-top: 40px;">
+        <li class="list__item">
+            <a href="userDetail.html">
+                <div class="list__item_hd ">
+                    <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                    <span class="tag space"><!--占位符，请勿删除--></span>
+                </div>
+                <div class="list__item_bd ">
+                    <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
+                    <p class="question-date">今天</p>
+                </div>
+                <span class="question_msg-tip">1</span>
+            </a>
+        </li>
+        <li class="list__item">
+            <a href="userDetail.html">
+                <div class="list__item_hd ">
+                    <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                    <span class="tag space"><!--占位符，请勿删除--></span>
+                </div>
+                <div class="list__item_bd ">
+                    <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
+                    <p class="question-date">昨天</p>
+                </div>
+            </a>
+        </li>
+        <li class="list__item">
+            <a href="userDetail.html">
+                <div class="list__item_hd ">
+                    <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                    <span class="tag space"><!--占位符，请勿删除--></span>
+                </div>
+                <div class="list__item_bd ">
+                    <p class="question-des">密码找回有三种方式：1、手机短信找回哈哈哈哈哈</p>
+                    <p class="question-date">8-8</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+</div>
+
 
 <script src="../js/util.js"></script>
 <script src="../libs/weui/weui.js"></script>
 <script src="../js/mobile.js"></script>
 <script>
 window.onload = function () {
-    var startTime = util.q("#startTime");
 
+    //搜索历史记录，页面载入时从localstorage读取，搜索一次，存一次搜索的关键字。
+    var searchInput = util.q("#search_input");
+    var singleSearchForm = util.q("#singleSearchForm");
+
+    //1、载入localstorage，显示历史记录在界面中
+    showHistory();
+
+    //2、单独搜索时存储关键字
+    util.addHandler(singleSearchForm,"submit",singleSearch);
+    function singleSearch(event) {
+        event = util.getEvent(event);
+
+        //更新localstorage
+        setLocalStorage();
+
+        //提交数据进行搜索
+        searchInput.submit();
+
+        showHistory();
+    }
+
+    //3、点击历史记录标签调用ajax搜索
+    var historyList = util.qa(".search-history__item");
+    for(var i=0; i<historyList.length; i++) {
+        util.addHandler(historyList[i],"click",function (event) {
+            event = util.getEvent(event);
+            value = util.getTarget(event).innerText;
+            alert(value);
+            //ajax提交数据待补充
+        })
+    }
+
+    //4、清除历史记录
+    var clearHistory = util.q(".clearHistory");
+    util.addHandler(clearHistory,"click",function () {
+        //清除localstorage
+        localStorage.removeItem("searchHistory");
+
+        showHistory();
+    });
+
+    //5、过滤功能，相当于重新搜索一次；
+    var hiddenSubject = util.q("#hiddenSubject");
+    var filterBtn = util.q("#filterBtn");
+    util.addHandler(filterBtn,"click",function () {
+        event = util.getEvent(event);
+        //设置隐藏的主题input的值
+        hiddenSubject.value = searchInput.value;
+
+
+        //更新localstorage;
+        setLocalStorage();
+
+        //将所有的搜索字段提交，或者采用ajax方式，方式待定；
+        filterBtn.submit();
+
+        showHistory();
+
+    });
+
+
+    //从localstorage读取数据，显示出来
+    function showHistory() {
+        var searchHistoryWrap = util.q("#searchHistoryWrap");
+        searchHistoryWrap.innerHTML = "";
+        var historyArr = [];
+        var str = "";
+        if(localStorage.getItem("searchHistory")){
+            if(localStorage.getItem("searchHistory").indexOf(",") !== -1){
+                historyArr = localStorage.getItem("searchHistory").split(",");
+            } else {
+                historyArr = [localStorage.getItem("searchHistory")];
+            }
+            for(var i=0; i<historyArr.length; i++){
+                str += "<li class=\"search-history__item\">"+historyArr[i]+"</li>"
+            }
+            searchHistoryWrap.innerHTML = str;
+        }
+    }
+
+    //更新localstorage
+    function setLocalStorage() {
+        //判断是否有searchHistory本地存储，有的话直接追加，没有的话创建
+        var tempArr =[];
+        var value = "";
+        if(searchInput.value.trim().length > 0 ){
+            value = searchInput.value;
+            if(localStorage.getItem("searchHistory")){
+                localStorage.setItem("searchHistory",localStorage.getItem("searchHistory") + "," + value);
+
+                //刘轶男要求搜索记录条数上限为5条，这里做一下控制
+                tempArr = localStorage.getItem("searchHistory").split(",");
+                if(tempArr.length >=5){
+                    localStorage.setItem("searchHistory",tempArr.slice(-5));
+                }
+
+            }else {
+                localStorage.setItem("searchHistory",value);
+            }
+        } else {
+            return false;               //这里需要注意是否会出问题
+        }
+
+
+    }
+
+
+    //时间选择器——开始时间
+    var startTime = util.q("#startTime");
     util.addHandler(startTime,"focus",function (event) {
         weui.datePicker({
             start: 1990,
             end: 2000,
             defaultValue: [1991, 6, 9],
             onChange: function(result){
-                console.log(result);
+                // console.log(result);
             },
             onConfirm: function(result){
-                console.log(result);
+                startTime.value = formatDate(result);
             },
             id: 'datePicker'
         });
+
+        document.activeElement.blur();
     });
+
+//时间选择器——截至时间
+    var endTime = util.q("#endTime");
+    util.addHandler(endTime,"focus",function (event) {
+        weui.datePicker({
+            start: 1990,
+            end: 2000,
+            defaultValue: [1991, 6, 9],
+            onChange: function(result){
+                // console.log(result);
+            },
+            onConfirm: function(result){
+                endTime.value = formatDate(result);
+            },
+            id: 'datePicker'
+        });
+
+        document.activeElement.blur();
+    });
+
+
+
+    //日期格式化函数，考虑加到工具函数库
+    function formatDate(str) {
+        return str.toString().replace(/,/g, "/");
+    }
+
+
+    //折叠面板功能
+    //下拉面板
+    var dropdownLink = util.qa(".dropdownToggle");
+    for (var i=0; i< dropdownLink.length; i++) {
+        dropdownLink[i].onclick = function () {
+            var panelBd = this.parentElement.parentElement.nextElementSibling;
+            var panel = this.parentElement.parentElement.parentElement;
+            if(panelBd.style.maxHeight) {
+                panelBd.style.maxHeight = null;
+                this.classList.remove("active");
+                setTimeout(function () {
+                    panel.style.boxShadow = " 0 6px 6px rgba(0,0,0,0)";
+                },0);
+
+            } else {
+                panelBd.style.maxHeight = panelBd.scrollHeight + 'px';
+                this.classList.add("active");
+                setTimeout(function () {
+                    panel.style.boxShadow = " 0 4px 6px rgba(0,0,0,0.05)";
+                },500);
+            }
+        }
+    }
+
+
+
 };
 
 </script>
