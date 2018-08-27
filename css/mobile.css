@@ -54,7 +54,9 @@ fieldset {
 .clearfix {
     zoom: 1;
 }
-
+.cell_dbline__hd {
+    color: #9e9eae;
+}
 .iconfont {
     font-family:"iconfont" !important;
     font-size:16px;
@@ -1387,15 +1389,20 @@ p {
     width: 22px;
     height: 22px;
     line-height: 20px;
-    background-color: #5fbeaa;
+    /*background-color: #5fbeaa;*/
     color: #fff;
-    font-size: 12px;
+    font-size: 10px;
     border-radius: 2px;
     text-align: center;
     cursor: pointer;
     /*transform: rotate(-45deg);*/
-}
 
+}
+.timeline__label.timeline_label_ask {
+    background: url("../images/ask_label_bg.png") no-repeat center center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
 .timeline__content {
     padding-bottom: 15px;
     margin-left: 25px;
@@ -1938,82 +1945,7 @@ p {
 }
 
 /*  ====================================  问题详情-用户  ====================================  */
-.user-question-detail .weui-tab {
-    overflow-y: scroll;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 49px;
-    border-top: 1px solid transparent;
-}
-.user-question-detail .article-hd {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100000;
-}
-.user-question-detail .weui-navbar {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    position: absolute;
-    z-index: 500;
-    top: 70px;
-    width: 100%;
-    background-color: #ffffff;
-}
-.user-question-detail .weui-tab__panel {
-    height: 100%;
-    overflow: auto;
-    padding-top: 124px;
-    padding-bottom: 49px;
-}
-.user-question-detail .bottom-btn-wrap {
-    position: absolute;
-    bottom:0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    display: flex;
-    display: -webkit-flex;
-    display: -webkit-box;
-    justify-content: space-between;
-    z-index: 100;
-}
-.user-question-detail .bottom-btn__item {
-    flex: 1;
-    height: 49px;
-    overflow: hidden;
-    position: relative;
-    width: 50%;
-    text-align: center;
-}
-.user-question-detail .bottom-btn_warn {
-    background: #ffc868;
-    border: none;
-    width: 100%;
-    height: 100%;
-    display: block;
-    color: #ffffff;
-    font-size: 18px;
-    line-height: 49px;
-}
-.user-question-detail .bottom-btn_primary {
-    background: #5fbeaa;
-    border: none;
-    width: 100%;
-    height: 100%;
-    display: block;
-    color: #ffffff;
-    font-size: 18px;
-    line-height: 49px;
-}
-.user-question-detail .cell-line-label {
-    line-height: 40px;
-}
+
     /*  ====================================  在线留言-用户  ====================================  */
 .user-chat {
     overflow: hidden;
@@ -2078,6 +2010,23 @@ p {
 .consultant-todo {
 
 }
+.consultant-todo .search-bar,
+.consultant-replied .search-bar,
+.consultant-transferred .search-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+.consultant-todo .content,
+.consultant-replied .content,
+.consultant-transferred .content{
+    padding-top: 54px;
+}
+
+
+
 
 /*  ====================================  已回复列表-顾问  ====================================  */
 .consultant-replied {
@@ -2094,10 +2043,128 @@ p {
 
 }
 
+
 /*  ====================================  回复-顾问  ====================================  */
 .reply {
 
 }
+.reply .weui-tab {
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 49px;
+    border-top: 1px solid transparent;
+}
+.reply .article-hd {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100000;
+}
+.reply .weui-navbar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    position: absolute;
+    z-index: 500;
+    top: 70px;
+    width: 100%;
+    background-color: #ffffff;
+}
+.reply .weui-tab__panel {
+    height: 100%;
+    overflow: auto;
+    padding-top: 124px;
+    padding-bottom: 49px;
+}
+.reply .bottom-btn-wrap {
+    position: absolute;
+    bottom:0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -webkit-box;
+    justify-content: space-between;
+    z-index: 100;
+}
+.reply .bottom-btn__item {
+    flex: 1;
+    height: 49px;
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    text-align: center;
+}
+.reply .bottom-btn_warn {
+    background: #ffc868;
+    border: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 49px;
+}
+.reply .bottom-btn_primary {
+    background: #5fbeaa;
+    border: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 49px;
+}
+.reply .cell-line-label {
+    line-height: 40px;
+}
+.reply .cells {
+    padding: 0;
+}
+.reply .cell_dbline {
+    padding-left: 0;
+    padding-right: 0;
+}
+.reply .cell_dbline__hd {
+    color: #9e9eae;
+}
+
+.bottom-btn__item {
+    background: #ffffff;
+}
+.bottom-btn__item-left {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-around;
+}
+.bottom-btn__item-left a {
+    /*background: #f00;*/
+    flex: 1;
+    width: 30%;
+    display: inline-block;
+    line-height: 16px;
+}
+.bottom-btn__item-left a .iconfont {
+    line-height: 18px;
+    font-size: 20px;
+}
+.bottom-btn__label {
+    display: inline-block;
+    width: 100%;
+    font-size: 10px;
+    margin: 0 auto;
+    line-height: 1em;
+}
+
+
+
 
 /*  ====================================  转单去向  ====================================  */
 .transfor-bill {
@@ -2107,6 +2174,36 @@ p {
 /*  ====================================  搜索-顾问  ====================================  */
 .consultant-search {
 
+}
+
+/*  ====================================  在线沟通-顾问  ====================================  */
+.consultant-chat {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.consultant-chat .main {
+    position: absolute;
+    top: 0;
+    bottom: 49px;
+    overflow-y: scroll;
+    width: 100%;
+    height: calc(100vh - 49px);
+    /*background: #0f0;*/
+    -webkit-overflow-scrolling: touch;
+}
+.consultant-chat .main .chat-content {
+    min-height: 600px;
+}
+
+
+/*  ====================================  转单去向-顾问  ====================================  */
+.transfor-bill {
+    background: #ffffff;
+}
+.transfor-bill .cell-line-select {
+    height: 48px;
 }
 
 

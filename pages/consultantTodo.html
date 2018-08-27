@@ -13,11 +13,83 @@
     </style>
 </head>
 <body class="consultant-todo">
+<!--搜索框-->
+<div class="search-bar" id="search_bar">
+    <form class="search-bar__form">
+        <div class="search-bar__box">
+            <input type="search" class="search-bar__input" id="search_input" placeholder="请输入问题标题或单号"/>
+            <i class="iconfont">&#xe61e;</i>
+        </div>
+    </form>
+</div>
 
+<div class="content">
+    <!--问题列表-->
+    <ul style="display: block;" class="list-consultant">
+        <li class="list__item unread">
+            <a href="javascript:;">
+                <div class="list__item_hd ">
+                    <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                    <span class="tag space"><!--占位符，请勿删除--></span>
+                </div>
+                <div class="list__item_bd ">
+                    <p class="question-des">密码找回有三种方式：1、手机短信找回jskdfjskfjsjkjfks</p>
+                    <p class="question-date">今天</p>
+                </div>
+                <span class="question_msg-tip">1</span>
+            </a>
+        </li>
+        <li class="list__item">
+            <a href="javascript:;">
+                <div class="list__item_hd ">
+                    <h2 class="question-title">如何找回BIP密码如何找回BIP密码如何找回BIP密码？</h2>
+                    <span class="tag chao">超</span><span class="tag gao">高</span><span class="tag zhuan">转</span><span class="tag space"><!--占位符，请勿删除--></span>
+                </div>
+                <div class="list__item_bd ">
+                    <p class="question-des">密码找回有三种方式：1、手机短信找回jskdfjskfjsjkjfks</p>
+                    <p class="question-date">今天</p>
+                </div>
+                <span class="question_msg-tip">1</span>
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+
+
+
+
+<!--底部选项卡-->
+<div class="bottom-tabbar">
+    <a href="consultantTodo.html" class="bottom-tabbar__item ">
+        <span class="iconfont icon-ask-plain bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">待办</p>
+    </a>
+    <a href="consultantReplied.html" class="bottom-tabbar__item bottom-bar__item_on">
+        <span class="iconfont icon-questionlist bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">已回复</p>
+    </a>
+    <a href="consultantTransferred.html" class="bottom-tabbar__item bottom-bar__item_on">
+        <span class="iconfont icon-questionlist bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">已转单</p>
+    </a>
+    <a href="userCenter.html" class="bottom-tabbar__item">
+        <span class="iconfont icon-usercenter-plain bottom-tabbar__iconfont"></span>
+        <p class="bottom-tabbar__label">个人中心</p>
+    </a>
+</div>
+
+<script src="../libs/weui/weui.js"></script>
 <script src="../js/mobile.js"></script>
+
 <script>
-
-
+    weui.tab('#tab',{
+        defaultIndex: 0,
+        onChange: function(index){
+            console.log(index);
+        }
+    });
 
 </script>
 </body>

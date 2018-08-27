@@ -13,6 +13,77 @@
     </style>
 </head>
 <body class="transfor-bill">
+<!--两行表单-->
+<form action="">
+    <div class="cells">
+        <div class="cell_dbline">
+            <label class="cell_dbline__hd" for="">转单去向</label>
+            <div class="cell_dbline__bd">
+                <select class="cell-line-select" name="category" id="" >
+                    <option value="1">转向一线顾问</option>
+                    <option value="2" selected>转向二线顾问</option>
+                </select>
+            </div>
+        </div>
+        <div class="cell_dbline">
+            <label class="cell_dbline__hd" for="">片区</label>
+            <div class="cell_dbline__bd">
+                <select class="cell-line-select" name="category" id="" >
+                    <option value="1" selected>集团总部</option>
+                    <option value="2">佛肇片区</option>
+                </select>
+            </div>
+        </div>
+        <div class="cell_dbline">
+            <label class="cell_dbline__hd" for="">系统</label>
+            <div class="cell_dbline__bd">
+                <input type="text" id="" class="cell_dbline__input" value="BIP系统" placeholder="请选择系统">
+                <span class="iconfont icon-down-triangle"></span>
+            </div>
+        </div>
+        <div class="cell_dbline">
+            <label class="cell_dbline__hd" for="">类别</label>
+            <div class="cell_dbline__bd">
+                <input type="text" id="" class="cell_dbline__input" value="权限节点" placeholder="请选择系统">
+                <span class="iconfont icon-down-triangle"></span>
+            </div>
+        </div>
+        <div class="cell_dbline">
+            <label class="cell_dbline__hd" for="">顾问指定</label>
+            <div class="cell_dbline__bd">
+                <select class="cell-line-select" name="category" id="" >
+                    <option value="1" selected>顾问随机</option>
+                    <option value="2">顾问制定</option>
+                </select>
+            </div>
+        </div>
+        <div class="cell_dbline">
+            <label class="cell_dbline__hd" for="">转单原因</label>
+            <div class="cell_dbline__bd">
+                <select class="cell-line-select" name="category" id="" >
+                    <option value="1" selected>别人转错单给我</option>
+                    <option value="2">不是我领域范围</option>
+                </select>
+            </div>
+        </div>
+        <div class="cell_dbline">
+            <label class="cell_dbline__hd" for="">转单描述</label>
+            <div class="cell_dbline__bd">
+                <textarea name="" id="aaa" cols="30" class="cell_dbline__textarea" rows="6"
+                          placeholder="请输入转单描述"></textarea>
+            </div>
+        </div>
+        <div class="cell_dbline">
+            <div class="btn-area_inline">
+                <button type="button" onclick="window.history.go(-1);" class="btn btn_default previous stepPrevious">取消</button>
+                <button type="submit" class="btn btn_primary next">提交</button>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+
 
 <script src="../js/mobile.js"></script>
 <script>
