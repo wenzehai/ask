@@ -25,8 +25,8 @@
     <form class="search-bar__form" id="singleSearchForm" action="http://localhost:63342/ask/pages/userSearch.html?_ijt=rbr9f6cr5m0ssc8ru0d304jj1j">
         <div class="search-bar__box">
             <input type="search" class="search-bar__input" name="subject" id="search_input" placeholder="请输入问题标题或单号"/>
-            <i class="iconfont">&#xe61e;</i>
-            <!--<span>搜索</span>-->
+            <span class="iconfont icon-search"></span>
+            <span class="iconfont icon-cuowu"></span>
         </div>
     </form>
 </div>
@@ -52,14 +52,13 @@
 <!--问题列表-->
 <div class="listWrap">
     <!--高级搜索-->
-    <div class="panel panel_dropdown filter-search" style="display: block; z-index: 100;position: absolute;width: 100%;box-sizing: border-box;">
+    <div class="panel panel_dropdown" style="display: block;">
         <div class="panel__hd">
             <div class="panel__hd_left">
                 <h2 class="panel__title">共搜索到<span class="list-numbers">2000</span>条</h2>
             </div>
             <div class="panel__hd_right">
-                <span class="dropdownToggle">筛选</a></span>
-                <!--<a class="dropdown-link" href="javascript:;">-->
+                <span class="dropdownToggle"><span class="iconfont icon-down-triangle"></span>筛选</span>
             </div>
         </div>
         <div class="panel__bd">
@@ -68,7 +67,7 @@
                 <div class="cells">
                     <div class="cell-line cell-line_select">
                         <div class="cell-line__hd">
-                            <label for="system" class="cell-line-label">系统</label>
+                            <label for="system" class="cell-line-label">系统系统</label>
                         </div>
                         <div class="cell-line__bd">
                             <select class="cell-line-select" name="system" id="system">
@@ -114,9 +113,6 @@
                         <button class="btn btn_primary filter-btn" type="submit" id="filterBtn">筛选</button>
                     </div>
                 </div>
-                <!-- <div class="cells filter-btn-wrap">
-
-                 </div>-->
             </form>
         </div>
     </div>
@@ -326,24 +322,31 @@ window.onload = function () {
 
     //折叠面板功能
     //下拉面板
-    var dropdownLink = util.qa(".dropdownToggle");
-    for (var i=0; i< dropdownLink.length; i++) {
-        dropdownLink[i].onclick = function () {
-            var panelBd = this.parentElement.parentElement.nextElementSibling;
-            var panel = this.parentElement.parentElement.parentElement;
-            if(panelBd.style.maxHeight) {
-                panelBd.style.maxHeight = null;
-                this.classList.remove("active");
+    var dropdownBtn = util.qa(".dropdownToggle");
+    for (var i=0; i< dropdownBtn.length; i++) {
+        dropdownBtn[i].onclick = function () {
+            var panelHd = this.parentElement.parentElement;
+            var panel = this.parentElement.parentElement.nextElementSibling;
+            panel.style.height = window.getComputedStyle(panel).getPropertyValue("height");
+            if(parseInt(panel.style.height) == 0) {
+                console.log(panel.style.height);
+                panel.style.height = panel.scrollHeight + 'px';
+                panel.style.transitionDuration = 0.5 + "s";
                 setTimeout(function () {
-                    panel.style.boxShadow = " 0 6px 6px rgba(0,0,0,0)";
-                },0);
-
-            } else {
-                panelBd.style.maxHeight = panelBd.scrollHeight + 'px';
-                this.classList.add("active");
-                setTimeout(function () {
-                    panel.style.boxShadow = " 0 4px 6px rgba(0,0,0,0.05)";
+                    panelHd.classList.add("showLine");
                 },500);
+                this.firstChild.classList.remove("icon-down-triangle");
+                this.firstChild.classList.add("icon-up-triangle");
+            } else {
+                panel.style.transitionDuration = 0.5 + "s";
+                setTimeout(function () {                    //解决首次收缩面板没有过渡效果
+                    panel.style.height = 0 + "px";
+                },50);
+                setTimeout(function () {
+                    panelHd.classList.remove("showLine");
+                },500);
+                this.firstChild.classList.remove("icon-up-triangle");
+                this.firstChild.classList.add("icon-down-triangle");
             }
         }
     }

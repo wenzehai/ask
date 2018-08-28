@@ -14,16 +14,14 @@
     <link rel="stylesheet" type="text/css" href="../libs/weui/weui.css">
     <link rel="stylesheet" type="text/css" href="../css/mobile.css">
     <!--所有页面的css样式统一汇总在此页面，每个页面加前缀**Page-->
-    <style>
 
-
-    </style>
 </head>
 <body class="user-question-detail">
+<div class="article-hd">
+    <h1 class="article-hd__title">BIP附件无法上传/点击上传按钮无反应怎么办？</h1>
+</div>
+
 <div class="weui-tab" id="userDetailTab">
-    <div class="article-hd">
-        <h1 class="article-hd__title">在编辑新闻的时候 ？</h1>
-    </div>
     <div class="weui-navbar">
         <div class="weui-navbar__item weui-navbar__item_on">
             <a href="javascript:;" class="link">描述与回复</a>
@@ -49,16 +47,22 @@
                     </div>
                 </div>
                 <div class="panel__bd">
-                    <div class="question-reply">
-                        问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容
+                    <div class="replied-content" style="display: none;">
+                        <div class="question-reply">
+                            <p>问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容问题回复内容</p>
+                        </div>
+                        <ul class="question-img clearfix">
+                            <li class="question-img__item"><a href="javascript:;"><img
+                                    src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2772238788,968076026&fm=27&gp=0.jpg"
+                                    alt=""></a></li>
+                            <li class="question-img__item"><a href="javascript:;"><img src="../images/eg.jpg" alt=""></a>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="question-img clearfix">
-                        <li class="question-img__item"><a href="javascript:;"><img
-                                src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2772238788,968076026&fm=27&gp=0.jpg"
-                                alt=""></a></li>
-                        <li class="question-img__item"><a href="javascript:;"><img src="../images/eg.jpg" alt=""></a>
-                        </li>
-                    </ul>
+                    <div class="no-reply" style="display: block;">
+                        <span class="iconfont icon-replied-plain"></span><span class="consultant">张小伟</span>努力帮您处理中...
+
+                    </div>
                 </div>
             </div>
 
@@ -81,12 +85,13 @@
             </div>
 
             <!--基本信息-->
-            <div class="panel base-info">
-                <div class="panel__hd">
+            <div class="panel base-info panel_dropdown">
+                <div class="panel__hd showLine">
                     <div class="panel__hd_left">
                         <h2 class="panel__title">基本信息</h2>
                     </div>
                     <div class="panel__hd_right">
+                        <span class="dropdownToggle"><span class="iconfont icon-down-triangle"></span></span>
                     </div>
                 </div>
                 <div class="panel__bd">
@@ -138,7 +143,7 @@
 
         </div>
         <!--历史记录-->
-        <div class="weui-tab__content" style="display:block">
+        <div class="weui-tab__content">
             <div class="panel">
                 <div class="panel__hd">
                     <div class="panel__hd_left">
@@ -216,12 +221,16 @@
             </div>
         </div>
 
-        <div class="weui-tab__content" style="display:none">待补充</div>
+        <div class="weui-tab__content">待补充</div>
 
         <!--底部按钮-->
-        <div class="bottom-btn-wrap">
-            <div class="bottom-btn__item"><a href="resend.html" class="bottom-btn_warn ">未解决，继续追问</a></div>
-            <div class="bottom-btn__item"><a class="bottom-btn_primary " id="rateBtn">去评价</a></div>
+        <div class="bottom-tabbar bottom-btn-bar two-btn-bar">
+            <a href="resend.html" class="bottom-tabbar__item">
+                <button class="bottom-btn bottom-btn_warn">未解决，继续追问</button>
+            </a>
+            <a href="javascript:;" class="bottom-tabbar__item">
+                <button class="bottom-btn bottom-btn_primary">回复</button>
+            </a>
         </div>
 
     </div>
@@ -243,8 +252,6 @@
                     <button class=" btn_inline btn btn_default">取消</button>
                     <button class=" btn_inline btn btn_primary">确定</button>
                 </div>
-                <!--<a href="javascript:;" class="weui-dialog__btn btn_inline btn weui-dialog__btn_default">辅助操作</a>-->
-                <!--<a href="javascript:;" class="weui-dialog__btn btn_inline btn weui-dialog__btn_primary">主操作</a>-->
             </div>
         </div>
     </div>
@@ -307,9 +314,45 @@
         navbar.style.top = titleHeight + "px";                                          //设置标签距离顶部端距离
         tabPanelWrap.style.paddingTop = titleHeight + 54 + "px";
 
+        //下拉面板
+        var dropdownBtn = util.qa(".dropdownToggle");
+        for (var i=0; i< dropdownBtn.length; i++) {
+            dropdownBtn[i].onclick = function () {
+                var panelHd = this.parentElement.parentElement;
+                var panel = this.parentElement.parentElement.nextElementSibling;
+                panel.style.height = window.getComputedStyle(panel).getPropertyValue("height");
+                if(parseInt(panel.style.height) == 0) {
+                    console.log(panel.style.height);
+                    panel.style.height = panel.scrollHeight + 'px';
+                    panel.style.transitionDuration = 0.5 + "s";
+                    setTimeout(function () {
+                        panelHd.classList.add("showLine");
+                    },500);
+                    this.firstChild.classList.remove("icon-down-triangle");
+                    this.firstChild.classList.add("icon-up-triangle");
+                } else {
+                    panel.style.transitionDuration = 0.5 + "s";
+                    setTimeout(function () {                    //解决首次收缩面板没有过渡效果
+                        panel.style.height = 0 + "px";
+                    },50);
+                    setTimeout(function () {
+                        panelHd.classList.remove("showLine");
+                    },500);
+                    this.firstChild.classList.remove("icon-up-triangle");
+                    this.firstChild.classList.add("icon-down-triangle");
+                }
+            }
+        }
 
     };
-
+/*
+* 备注：
+* 1、图片预览待完成
+* 2、下拉待抽离
+* 3、倒计时待拷贝
+* 4、状态调整
+*
+* */
 </script>
 </body>
 </html>

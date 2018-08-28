@@ -144,8 +144,8 @@
                                 class="wrong-tip">这里是错误提示预留位置</span>
                         </div>
                         <div class="cell_dbline__bd">
-                            <input type="tel" id="tel" class="cell_dbline__input" placeholder="张小伟"
-                                   value="15088888888">
+                            <input type="tel" id="tel" class="cell_dbline__input" placeholder="请输入您的手机号"
+                                   value="">
                         </div>
                     </div>
                     <div class="cell_dbline">
@@ -154,8 +154,8 @@
                                 class="wrong-tip">这里是错误提示预留位置</span>
                         </div>
                         <div class="cell_dbline__bd">
-                            <input type="number" id="qq" class="cell_dbline__input" placeholder="张小伟"
-                                   value="4512785442">
+                            <input type="number" id="qq" class="cell_dbline__input" placeholder="请输入QQ号码（与微信号选填其一）"
+                                   value="">
                         </div>
                     </div>
                     <div class="cell_dbline">
@@ -164,7 +164,7 @@
                                 class="wrong-tip">这里是错误提示预留位置</span>
                         </div>
                         <div class="cell_dbline__bd">
-                            <input type="text" id="wechat" class="cell_dbline__input" placeholder="请输入微信号（选填）">
+                            <input type="text" id="wechat" class="cell_dbline__input" value="" placeholder="请输入微信号（与QQ号选填其一）">
                         </div>
                     </div>
                     <div class="cell_dbline">
@@ -182,11 +182,11 @@
 <!--底部选项卡-->
 <div class="bottom-tabbar">
     <a href="ask.html" class="bottom-tabbar__item bottom-bar__item_on">
-        <span class="iconfont icon-ask-plain bottom-tabbar__iconfont"></span>
+        <span class="iconfont icon-ask bottom-tabbar__iconfont"></span>
         <p class="bottom-tabbar__label">我要提问</p>
     </a>
     <a href="questionList.html" class="bottom-tabbar__item ">
-        <span class="iconfont icon-questionlist bottom-tabbar__iconfont"></span>
+        <span class="iconfont icon-questionlist-plain bottom-tabbar__iconfont"></span>
         <p class="bottom-tabbar__label">问题列表</p>
     </a>
     <a href="userCenter.html" class="bottom-tabbar__item">
@@ -201,7 +201,6 @@
 <script src="../libs/weui/weui.min.js"></script>
 <script>
     window.onload = function () {
-
 
         var next = util.qa(".next");
         var previous = util.qa(".previous");
@@ -356,6 +355,13 @@
                 // return true; // 阻止默认行为，不使用默认的失败态
             }
         });
+
+        /*备注：
+        * 待开发的功能：1、动态搜索；2、电话号码插件加入；
+        * 待跟进：1、上传图片
+        * 待抽离：1、底部导航栏的显示与隐藏
+        *
+        * */
 
     };
 

@@ -1,29 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        @keyframes aaa {
-            from {-webkit-transform: scale(1);
-                transform: scale(1);}
-            to{-webkit-transform: scale(0);
-                transform: scale(0);}
+    <title>简单实用的垂直导航菜单</title>
+    <meta http-equiv="content-type" content="text/html;charset=gb2312">
+    <style type="text/css">
+        .sv3 dl,.sv3 dt,.sv3 dd{
+            padding:0;
+            margin:0;
         }
-        #aaa{
-            margin:200px auto;
-            width:250px;
-            height:250px;
-            background: red;
-            border-radius: 50%;
-
+        .sv3{
+            width:240px;
+            border:1px solid #BFC7D9;
         }
-        #aaa:hover{
-            animation: aaa 1s ease-in-out 0s  alternate;
+        .sv3 dl{
+            width:240px;
+            height:380px;
+            background:#EDF5FF;
+            overflow:hidden;
+        }
+        .sv3 dt{
+            padding:5px 10px;
+            height:13px;
+            font-size:13px;
+            color:#000;
+            background:#E5ECF9;
+            border-top:1px solid #fff;
+            border-bottom:1px solid #BFC7D9;
+        }
+        .sv3 dl.on dt{
+            background:#3366CC;
+            color:#FFF;
+            font-weight:bold;
+        }
+        .sv3 dd{
+            padding:10px;
+            color:#333;
+            font-size:12px;
+            line-height:1.5em;
+        }
+        .sv3 dd a:link,
+        .sv3 dd a:visited,
+        .sv3 dd a:hover,
+        .sv3 dd a:active{
+            color:#333;
+            display:block;
+            text-align:right;
         }
     </style>
 </head>
 <body>
-<div id="aaa"></div>
+<h3>简单实用的垂直导航菜单</h3>
+<div id="idSlideView3" class="sv3">
+    <dl class="on">
+        <dt>网页特效 </dt>
+        <dd> 导航菜单</dd>
+    </dl>
+    <dl>
+        <dt> 层与布局</dt>
+        <dd> 内容二 </dd>
+    </dl>
+    <dl>
+        <dt> 表单相关</dt>
+        <dd> 内容三 </dd>
+    </dl>
+    <dl>
+        <dt> ASP源码 </dt>
+        <dd> 内容四</dd>
+    </dl>
+    <dl>
+        <dt> PHP源码 </dt>
+        <dd> 内容五 </dd>
+    </dl>
+</div>
+<script language="javascript">
+    function SlideView(e){
+        for(var r=document.getElementById(e).getElementsByTagName('dl'),c=clearInterval,i=-1,p=r[0],j; j=r[++i];){
+            j.style.height=(i?24:379)+'px';
+            j.onmouseover=function(){clearTimeout(j);var i=this;j=setTimeout(function(){if(p!=i)_(p,379,24)(p=i,24,379)},200)};
+        }
+        function _(el,f,t){
+            c(el.$1);el.className=f>t?'':'on';
+            return el.$1=setInterval(function(){el.style.height=(f+=Math[f>t?'floor':'ceil']((t-f)*.3))+'px';if (f==t)c(el.$1)},10),_
+        }
+    };
+    new SlideView( "idSlideView3");
+</script>
 </body>
 </html>
